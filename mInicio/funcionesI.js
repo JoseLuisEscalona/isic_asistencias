@@ -344,10 +344,15 @@ function salir(){
               var letra_color="#fff";
               var color_borde="#40739e";
               cssTema(h_sidebar,color_base,letra_color,color_borde);
+              $("#Cambio").prop("checked", false);
+              $("#Cambio").click();
+              $('#pass').attr('type', 'password');
+              $('#vpass').attr('type', 'password');
               $("#icoLogin").removeClass("fas fa-unlock");
               $("#icoLogin").addClass("fas fa-lock");
               $("#btnIngresar").attr("disabled","disabled");
               $("#loginUsuario").focus();
+              $("#Cambio").prop("checked", false);
   
               var idUsuario=$("#inicioIdusuario").val();
               actividad  ="Salio del sistema";

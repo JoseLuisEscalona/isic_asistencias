@@ -146,6 +146,9 @@ $fecha=date("Y-m-d");
 
     </div>
 
+    <!-- Modal de cambiopass -->
+        <?php include'../modales/modalCambio.php'; ?>
+    <!-- Modal de cambiopass -->
     <!-- Modal de carga -->
         <?php include'../modales/modalCarga.php'; ?>
     <!-- Modal de carga -->  

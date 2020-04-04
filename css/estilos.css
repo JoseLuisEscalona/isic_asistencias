@@ -404,3 +404,9 @@ a.article:hover {
     opacity:1;filter:"alpha(opacity=100)";
     -ms-filter:"alpha(opacity=100)";
 }
+.rojo{
+    color: red;
+}
+.verde{
+    color: green;
+}
