@@ -8,7 +8,7 @@ function exportar(){
         data:{valor},
         success:function(respuesta){
            // console.log(respuesta);
-            preloader(1,"Generando archivo JSON","Se ha importado el archivo de manera exitosa !")
+            preloader(1,"Generando archivo JSON","Se ha exportado el archivo de manera exitosa !")
             
         },
         error:function(xhr,status){

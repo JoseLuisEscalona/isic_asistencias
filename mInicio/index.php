@@ -126,26 +126,12 @@ $fecha=date("Y-m-d");
                 <section id="Listado-EC" class="animated  fadeIn contenedor" style="display:none;"></section>
             </div>
 
-            <!-- <div class="container" id="usuarios">
-                <section id="guardar-EC" style="display:none;">
-                    <?php
-                        include'../musuarios/formGuardar.php';
-                    ?>
-                </section>
-
-                <section id="editar-EC" style="display:none;">
-                    <?php
-                        include'../mEstadoCivil/formEditar.php';
-                    ?>
-                </section>
-                
-                <section id="Listado-EC" class="animated  fadeIn contenedor" style="display:none;"></section>
-            </div>           -->
-
         </div>
 
     </div>
 
+    <!-- Modal de cambiopass dentro del sistema -->
+        <?php include'../modales/modalCambioSistem.php'; ?>
     <!-- Modal de cambiopass -->
         <?php include'../modales/modalCambio.php'; ?>
     <!-- Modal de cambiopass -->

@@ -64,15 +64,43 @@ function verEstadoCivil(){
     aplicarTema(idTema,'otro');      
 }
 
+function verCambioPass(){
+    $("#modalCambioPassSistem").modal("show");      
+}
+function cambiarPassSis(){
+    var idUsuario = $("#inicioIdusuario").val();
+    var ncontra = $("#pass").val();
+    $.ajax({
+        url:"../mInicio/cPassSis.php",
+        type:"POST",
+        dateType:"html",
+        data:{idUsuario, ncontra},
+        success:function(respuesta){
+            // console.log(respuesta);
+                alertify.success("<i class='fa fa-check fa-lg'></i> Contraseña actualizada correctamente", 2);
+                $("#pass").val("");
+                $("#vpass").val("");
+                $("#modalCambioPassSistem").modal("hide");
+                $("#Sim").removeClass("verde");
+                $("#Sim").addClass("rojo");
+                $("#Lon").removeClass("verde");
+                $("#Lon").addClass("rojo");
+                $('#pass').attr('type', 'password');
+                $('#vpass').attr('type', 'password');
+        },
+        error:function(xhr,status){
+            alert("Error en metodo AJAX"); 
+        },
+    });
+}
+
 function verUsuarios(){
     ocultarSecciones();
 }
 
+function abrirModalPDF(id,ruta,modulo){
 
-
-function abrirModalPDF(id,ruta,modulo) {
-
-    $("#txtTitularPDF").text(modulo)
+    $("#txtTitularPDF").text(modulo);
 
     var link = ruta+"/pdfDatos.php?id="+id ;
     PDFObject.embed(link, "#visualizador");
