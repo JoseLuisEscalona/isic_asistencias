@@ -168,6 +168,16 @@ function generar()
         $("#vpass").val(contraseña);
   }
 }
+function generar1()
+{
+  var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
+  var contraseña = "";
+  for (i=0; i<8; i++) {
+        contraseña += caracteres.charAt(Math.floor(Math.random()*caracteres.length));
+        $("#pass1").val(contraseña);
+        $("#vpass1").val(contraseña);
+  }
+}
 
 function validarcontra(){
     var pass = $("#pass").val();
@@ -195,10 +205,36 @@ function validarcontra(){
         $("#Lon").addClass("rojo");
     }
 }
+function validarcontra1(){
+    var pass = $("#pass1").val();
+    var vpass = $("#vpass1").val();
+    // var let = pswd.match(/[A-z]/);
+    // var mlet = pswd.match(/[A-Z]/);
+    // var num = pswd.match(/\d/);
+    if (pass.length>=8 || vpass.length>=8) {
+        $("#Lon1").removeClass("rojo");
+        $("#Lon1").addClass("verde");
+        if ((pass == vpass)) {
+            $("#btnGuardarPass1").removeAttr("disabled");
+            $("#Sim1").removeClass("rojo");
+            $("#Sim1").addClass("verde");
+        }
+        else{
+            $("#btnGuardarPass1").attr("disabled","disabled");
+            $("#Sim1").removeClass("verde");
+            $("#Sim1").addClass("rojo");
+        }
+    }
+    else{
+        $("#btnGuardarPass1").attr("disabled","disabled");
+        $("#Lon1").removeClass("verde");
+        $("#Lon1").addClass("rojo");
+    }
+}
 function cambiarPass(){
     var usuario    = $("#loginUsuario").val();
     var contra     = $("#loginContra").val();
-    var ncontra = $("#pass").val();
+    var ncontra = $("#pass1").val();
     $.ajax({
         url:"../mLogin/cPass.php",
         type:"POST",
@@ -207,25 +243,27 @@ function cambiarPass(){
         success:function(respuesta){
             // console.log(respuesta);
                 alertify.success("<i class='fa fa-check fa-lg'></i> Contraseña actualizada correctamente", 2);
-                $("#pass").val("");
-                $("#vpass").val("");
+                $("#pass1").val("");
+                $("#vpass1").val("");
                 $("#loginUsuario").val("");
                 $("#loginContra").val("");
                 $("#Cambio").prop("checked", false);
                 $("#contentLogin").hide();
                 $("#contentSistema").show();
                 $("#modalCambioPass").modal("hide");
-                $("#Sim").removeClass("verde");
-                $("#Sim").addClass("rojo");
-                $("#Lon").removeClass("verde");
-                $("#Lon").addClass("rojo");
-                $("#btnGuardarPass").attr("disabled","disabled");
+                $("#Sim1").removeClass("verde");
+                $("#Sim1").addClass("rojo");
+                $("#Lon1").removeClass("verde");
+                $("#Lon1").addClass("rojo");
+                $("#btnGuardarPass1").attr("disabled","disabled");
+                $('#pass1').attr('type', 'password');
+                $('#vpass1').attr('type', 'password');
         },
         error:function(xhr,status){
             alert("Error en metodo AJAX"); 
         },
     });
-    var contra     = $("#pass").val();
+    var contra     = $("#pass1").val();
     $.ajax({
         url:"../mLogin/validar_login.php",
         type:"POST",
@@ -263,6 +301,17 @@ function LimpiarModalCambioPass(){
     $('#pass').attr('type', 'password');
     $('#vpass').attr('type', 'password');
 }
+function LimpiarModalCambioPass1(){
+    $("#pass1").val("");
+    $("#vpass1").val("");
+    $("#Sim1").removeClass("verde");
+    $("#Sim1").addClass("rojo");
+    $("#Lon1").removeClass("verde");
+    $("#Lon1").addClass("rojo");
+    $("#btnGuardarPass1").attr("disabled","disabled");
+    $('#pass1').attr('type', 'password');
+    $('#vpass1').attr('type', 'password');
+}
 function verContraseña(){
     if ($('#pass').get(0).type == 'text' && $('#vpass').get(0).type == 'text') {
         $('#pass').attr('type', 'password');
@@ -272,3 +321,14 @@ function verContraseña(){
         $('#vpass').attr('type', 'text');
     }
 }
+function verContraseña1(){
+    if ($('#pass1').get(0).type == 'text' && $('#vpass1').get(0).type == 'text') {
+        $('#pass1').attr('type', 'password');
+        $('#vpass1').attr('type', 'password');
+    } else {
+        $('#pass1').attr('type', 'text');
+        $('#vpass1').attr('type', 'text');
+    }
+}
+
+

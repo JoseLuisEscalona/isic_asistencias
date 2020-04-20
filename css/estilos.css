@@ -410,3 +410,7 @@ a.article:hover {
 .verde{
     color: green;
 }
+.tamañomodal {
+    max-width: 65% !important;
+}
+

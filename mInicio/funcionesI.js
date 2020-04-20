@@ -474,6 +474,10 @@ function hablar(texto){
     responsiveVoice.speak(textoAtraducir,"Spanish Female"); 
     alertify.success("<i class='fa fa-volume-up fa-lg'></i>", 2);
 }
+function audio(){
+    $('<audio id="audTem"><source src="../audios/audTemas.mp3" type="audio/mpeg"></audio>').appendTo('body');
+    $('#audTem')[0].play();
+}
 
 function selectTwo(){
     $( ".select2" ).select2({

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50051
 File Encoding         : 65001
 
-Date: 2020-04-01 21:05:32
+Date: 2020-04-19 22:12:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -116,6 +116,43 @@ INSERT INTO `ecivil` VALUES ('8', 'Viud@', '2020-03-30', '14:08:10', '1');
 INSERT INTO `ecivil` VALUES ('9', 'Otros', '2020-03-31', '13:11:18', '1');
 
 -- ----------------------------
+-- Table structure for horarios
+-- ----------------------------
+DROP TABLE IF EXISTS `horarios`;
+CREATE TABLE `horarios` (
+  `id_horario` int(11) NOT NULL auto_increment,
+  `id_datos_persona` int(11) default NULL,
+  `turno` text,
+  `l_entrada` time default NULL,
+  `l_salida` time default NULL,
+  `m_entrada` time default NULL,
+  `m_salida` time default NULL,
+  `mi_entrada` time default NULL,
+  `mi_salida` time default NULL,
+  `j_entrada` time default NULL,
+  `j_salida` time default NULL,
+  `v_entrada` time default NULL,
+  `v_salida` time default NULL,
+  `s_entrada` time default NULL,
+  `s_salida` time default NULL,
+  `d_entrada` time default NULL,
+  `d_salida` time default NULL,
+  `fecha_registro` date default NULL,
+  `hora_registro` time default NULL,
+  PRIMARY KEY  (`id_horario`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of horarios
+-- ----------------------------
+INSERT INTO `horarios` VALUES ('1', '48', 'Nocturno', '18:00:00', '00:00:00', '18:00:00', '00:00:00', '18:00:00', '00:00:00', '18:00:00', '00:00:00', '18:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '2020-04-18', '23:48:43');
+INSERT INTO `horarios` VALUES ('2', '46', 'Matutino', '06:00:00', '12:00:00', '06:00:00', '12:00:00', '06:00:00', '12:00:00', '06:00:00', '12:00:00', '06:00:00', '12:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '2020-04-18', '23:18:54');
+INSERT INTO `horarios` VALUES ('3', '42', 'Especial', '00:00:00', '05:00:00', '00:00:00', '05:00:00', '00:00:00', '05:00:00', '00:00:00', '05:00:00', '00:00:00', '05:00:00', '00:00:00', '05:00:00', '00:00:00', '00:00:00', '2020-04-19', '20:38:16');
+INSERT INTO `horarios` VALUES ('4', '45', 'Matutino', '06:00:00', '12:00:00', '06:00:00', '12:00:00', '06:00:00', '12:00:00', '06:00:00', '12:00:00', '06:00:00', '12:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '2020-04-19', '20:19:29');
+INSERT INTO `horarios` VALUES ('5', '43', 'Vespertino', '12:00:00', '18:00:00', '12:00:00', '18:00:00', '12:00:00', '18:00:00', '12:00:00', '18:00:00', '12:00:00', '18:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '2020-04-19', '20:21:49');
+INSERT INTO `horarios` VALUES ('6', '47', 'Especial', '00:00:00', '05:00:00', '00:00:00', '05:00:00', '00:00:00', '05:00:00', '00:00:00', '05:00:00', '00:00:00', '05:00:00', '00:00:00', '05:00:00', '00:00:00', '05:00:00', '2020-04-19', '21:16:14');
+
+-- ----------------------------
 -- Table structure for log
 -- ----------------------------
 DROP TABLE IF EXISTS `log`;
@@ -126,7 +163,7 @@ CREATE TABLE `log` (
   `fecha_registro` date default NULL,
   `hora_registro` time default NULL,
   PRIMARY KEY  (`id_log`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=554 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of log
@@ -157,6 +194,533 @@ INSERT INTO `log` VALUES ('23', 'Ingreso al sistema', '3', '2020-03-31', '22:27:
 INSERT INTO `log` VALUES ('24', 'Salio del sistema', '3', '2020-03-31', '22:27:14');
 INSERT INTO `log` VALUES ('25', 'Ingreso al sistema', '3', '2020-03-31', '22:28:05');
 INSERT INTO `log` VALUES ('26', 'Ha cambiado al tema Night', '3', '2020-03-31', '22:28:12');
+INSERT INTO `log` VALUES ('27', 'Ingreso al sistema', '3', '2020-04-01', '21:10:06');
+INSERT INTO `log` VALUES ('28', 'Ingreso al sistema', '3', '2020-04-02', '15:31:44');
+INSERT INTO `log` VALUES ('29', 'Salio del sistema', '3', '2020-04-02', '15:47:11');
+INSERT INTO `log` VALUES ('30', 'Ingreso al sistema', '3', '2020-04-02', '16:32:11');
+INSERT INTO `log` VALUES ('31', 'Salio del sistema', '3', '2020-04-02', '16:38:03');
+INSERT INTO `log` VALUES ('32', 'Ingreso al sistema', '3', '2020-04-02', '18:21:33');
+INSERT INTO `log` VALUES ('33', 'Salio del sistema', '3', '2020-04-02', '18:22:15');
+INSERT INTO `log` VALUES ('34', 'Ingreso al sistema', '3', '2020-04-02', '18:22:40');
+INSERT INTO `log` VALUES ('35', 'Salio del sistema', '3', '2020-04-02', '18:22:47');
+INSERT INTO `log` VALUES ('36', 'Ingreso al sistema', '3', '2020-04-02', '18:23:34');
+INSERT INTO `log` VALUES ('37', 'Salio del sistema', '3', '2020-04-02', '18:23:40');
+INSERT INTO `log` VALUES ('38', 'Ingreso al sistema', '3', '2020-04-02', '18:23:46');
+INSERT INTO `log` VALUES ('39', 'Salio del sistema', '3', '2020-04-02', '18:24:30');
+INSERT INTO `log` VALUES ('40', 'Ingreso al sistema', '3', '2020-04-02', '18:25:54');
+INSERT INTO `log` VALUES ('41', 'Salio del sistema', '3', '2020-04-02', '18:25:59');
+INSERT INTO `log` VALUES ('42', 'Ingreso al sistema', '3', '2020-04-02', '18:27:40');
+INSERT INTO `log` VALUES ('43', 'Salio del sistema', '3', '2020-04-02', '18:27:48');
+INSERT INTO `log` VALUES ('44', 'Ingreso al sistema', '3', '2020-04-02', '18:28:14');
+INSERT INTO `log` VALUES ('45', 'Salio del sistema', '3', '2020-04-02', '18:28:19');
+INSERT INTO `log` VALUES ('46', 'Ingreso al sistema', '3', '2020-04-02', '18:28:24');
+INSERT INTO `log` VALUES ('47', 'Salio del sistema', '3', '2020-04-02', '18:28:29');
+INSERT INTO `log` VALUES ('48', 'Ingreso al sistema', '3', '2020-04-02', '18:29:25');
+INSERT INTO `log` VALUES ('49', 'Salio del sistema', '3', '2020-04-02', '18:29:31');
+INSERT INTO `log` VALUES ('50', 'Ingreso al sistema', '3', '2020-04-02', '18:35:00');
+INSERT INTO `log` VALUES ('51', 'Salio del sistema', '3', '2020-04-02', '18:35:06');
+INSERT INTO `log` VALUES ('52', 'Ingreso al sistema', '3', '2020-04-02', '18:35:44');
+INSERT INTO `log` VALUES ('53', 'Salio del sistema', '3', '2020-04-02', '18:35:56');
+INSERT INTO `log` VALUES ('54', 'Ha cambiado al tema CHyP', '3', '2020-04-02', '22:31:38');
+INSERT INTO `log` VALUES ('55', 'Salio del sistema', '3', '2020-04-02', '22:31:51');
+INSERT INTO `log` VALUES ('56', 'Salio del sistema', '3', '2020-04-02', '22:32:35');
+INSERT INTO `log` VALUES ('57', 'Ingreso al sistema', '3', '2020-04-02', '22:32:46');
+INSERT INTO `log` VALUES ('58', 'Salio del sistema', '3', '2020-04-02', '22:32:52');
+INSERT INTO `log` VALUES ('59', 'Salio del sistema', '3', '2020-04-02', '22:35:50');
+INSERT INTO `log` VALUES ('60', 'Ingreso al sistema', '3', '2020-04-02', '22:36:05');
+INSERT INTO `log` VALUES ('61', 'Salio del sistema', '3', '2020-04-02', '22:36:10');
+INSERT INTO `log` VALUES ('62', 'Ha cambiado al tema Night', '3', '2020-04-02', '22:36:59');
+INSERT INTO `log` VALUES ('63', 'Salio del sistema', '3', '2020-04-02', '22:37:11');
+INSERT INTO `log` VALUES ('64', 'Salio del sistema', '3', '2020-04-02', '22:37:32');
+INSERT INTO `log` VALUES ('65', 'Salio del sistema', '3', '2020-04-02', '22:41:22');
+INSERT INTO `log` VALUES ('66', 'Salio del sistema', '3', '2020-04-02', '22:43:13');
+INSERT INTO `log` VALUES ('67', 'Salio del sistema', '3', '2020-04-02', '22:52:36');
+INSERT INTO `log` VALUES ('68', 'Ingreso al sistema', '3', '2020-04-02', '22:54:23');
+INSERT INTO `log` VALUES ('69', 'Salio del sistema', '3', '2020-04-02', '22:54:29');
+INSERT INTO `log` VALUES ('70', 'Ingreso al sistema', '3', '2020-04-02', '22:55:27');
+INSERT INTO `log` VALUES ('71', 'Salio del sistema', '3', '2020-04-02', '22:55:35');
+INSERT INTO `log` VALUES ('72', 'Ingreso al sistema', '3', '2020-04-02', '22:55:52');
+INSERT INTO `log` VALUES ('73', 'Salio del sistema', '3', '2020-04-02', '22:55:57');
+INSERT INTO `log` VALUES ('74', 'Ingreso al sistema', '1', '2020-04-02', '22:56:03');
+INSERT INTO `log` VALUES ('75', 'Salio del sistema', '1', '2020-04-02', '22:56:09');
+INSERT INTO `log` VALUES ('76', 'Ingreso al sistema', '1', '2020-04-02', '22:56:25');
+INSERT INTO `log` VALUES ('77', 'Salio del sistema', '1', '2020-04-02', '22:56:31');
+INSERT INTO `log` VALUES ('78', 'Ingreso al sistema', '3', '2020-04-02', '22:57:59');
+INSERT INTO `log` VALUES ('79', 'Salio del sistema', '3', '2020-04-02', '22:58:05');
+INSERT INTO `log` VALUES ('80', 'Ingreso al sistema', '1', '2020-04-02', '22:58:21');
+INSERT INTO `log` VALUES ('81', 'Salio del sistema', '1', '2020-04-02', '22:58:26');
+INSERT INTO `log` VALUES ('82', 'Ingreso al sistema', '3', '2020-04-02', '22:58:32');
+INSERT INTO `log` VALUES ('83', 'Salio del sistema', '3', '2020-04-02', '22:58:36');
+INSERT INTO `log` VALUES ('84', 'Salio del sistema', '3', '2020-04-02', '22:58:59');
+INSERT INTO `log` VALUES ('85', 'Ingreso al sistema', '1', '2020-04-02', '22:59:15');
+INSERT INTO `log` VALUES ('86', 'Salio del sistema', '1', '2020-04-02', '22:59:20');
+INSERT INTO `log` VALUES ('87', 'Ingreso al sistema', '3', '2020-04-03', '14:29:14');
+INSERT INTO `log` VALUES ('88', 'Salio del sistema', '3', '2020-04-03', '14:30:32');
+INSERT INTO `log` VALUES ('89', 'Ingreso al sistema', '3', '2020-04-03', '14:32:47');
+INSERT INTO `log` VALUES ('90', 'Salio del sistema', '3', '2020-04-03', '14:33:07');
+INSERT INTO `log` VALUES ('91', 'Ingreso al sistema', '3', '2020-04-03', '14:40:42');
+INSERT INTO `log` VALUES ('92', 'Salio del sistema', '3', '2020-04-03', '14:42:18');
+INSERT INTO `log` VALUES ('93', 'Ingreso al sistema', '3', '2020-04-03', '14:42:54');
+INSERT INTO `log` VALUES ('94', 'Salio del sistema', '3', '2020-04-03', '14:43:01');
+INSERT INTO `log` VALUES ('95', 'Ingreso al sistema', '3', '2020-04-03', '14:43:18');
+INSERT INTO `log` VALUES ('96', 'Salio del sistema', '3', '2020-04-03', '14:43:39');
+INSERT INTO `log` VALUES ('97', 'Ingreso al sistema', '3', '2020-04-03', '14:51:50');
+INSERT INTO `log` VALUES ('98', 'Salio del sistema', '3', '2020-04-03', '14:51:58');
+INSERT INTO `log` VALUES ('99', 'Ingreso al sistema', '3', '2020-04-03', '14:53:34');
+INSERT INTO `log` VALUES ('100', 'Salio del sistema', '3', '2020-04-03', '14:53:40');
+INSERT INTO `log` VALUES ('101', 'Ingreso al sistema', '3', '2020-04-03', '14:55:01');
+INSERT INTO `log` VALUES ('102', 'Salio del sistema', '3', '2020-04-03', '14:55:06');
+INSERT INTO `log` VALUES ('103', 'Ingreso al sistema', '3', '2020-04-03', '14:55:26');
+INSERT INTO `log` VALUES ('104', 'Salio del sistema', '3', '2020-04-03', '14:55:31');
+INSERT INTO `log` VALUES ('105', 'Ingreso al sistema', '3', '2020-04-03', '14:55:38');
+INSERT INTO `log` VALUES ('106', 'Salio del sistema', '3', '2020-04-03', '14:55:43');
+INSERT INTO `log` VALUES ('107', 'Ingreso al sistema', '3', '2020-04-03', '15:34:17');
+INSERT INTO `log` VALUES ('108', 'Salio del sistema', '3', '2020-04-03', '15:34:28');
+INSERT INTO `log` VALUES ('109', 'Ingreso al sistema', '3', '2020-04-03', '15:40:36');
+INSERT INTO `log` VALUES ('110', 'Salio del sistema', '3', '2020-04-03', '15:40:42');
+INSERT INTO `log` VALUES ('111', 'Ingreso al sistema', '3', '2020-04-03', '15:40:56');
+INSERT INTO `log` VALUES ('112', 'Salio del sistema', '3', '2020-04-03', '15:41:06');
+INSERT INTO `log` VALUES ('113', 'Ingreso al sistema', '3', '2020-04-03', '15:41:39');
+INSERT INTO `log` VALUES ('114', 'Salio del sistema', '3', '2020-04-03', '15:42:19');
+INSERT INTO `log` VALUES ('115', 'Ingreso al sistema', '3', '2020-04-03', '15:42:35');
+INSERT INTO `log` VALUES ('116', 'Salio del sistema', '3', '2020-04-03', '15:42:44');
+INSERT INTO `log` VALUES ('117', 'Ingreso al sistema', '3', '2020-04-03', '15:54:14');
+INSERT INTO `log` VALUES ('118', 'Salio del sistema', '3', '2020-04-03', '15:54:19');
+INSERT INTO `log` VALUES ('119', 'Ingreso al sistema', '3', '2020-04-03', '15:54:59');
+INSERT INTO `log` VALUES ('120', 'Salio del sistema', '3', '2020-04-03', '15:55:04');
+INSERT INTO `log` VALUES ('121', 'Salio del sistema', '3', '2020-04-03', '17:24:58');
+INSERT INTO `log` VALUES ('122', 'Salio del sistema', '3', '2020-04-03', '17:25:53');
+INSERT INTO `log` VALUES ('123', 'Ingreso al sistema', '3', '2020-04-03', '17:26:08');
+INSERT INTO `log` VALUES ('124', 'Salio del sistema', '3', '2020-04-03', '17:26:13');
+INSERT INTO `log` VALUES ('125', 'Salio del sistema', '3', '2020-04-03', '17:26:34');
+INSERT INTO `log` VALUES ('126', 'Ingreso al sistema', '3', '2020-04-03', '17:27:21');
+INSERT INTO `log` VALUES ('127', 'Salio del sistema', '3', '2020-04-03', '17:27:26');
+INSERT INTO `log` VALUES ('128', 'Salio del sistema', '3', '2020-04-03', '17:41:57');
+INSERT INTO `log` VALUES ('129', 'Ingreso al sistema', '3', '2020-04-03', '17:42:13');
+INSERT INTO `log` VALUES ('130', 'Salio del sistema', '3', '2020-04-03', '17:42:19');
+INSERT INTO `log` VALUES ('131', 'Salio del sistema', '3', '2020-04-03', '17:42:44');
+INSERT INTO `log` VALUES ('132', 'Salio del sistema', '3', '2020-04-03', '17:43:04');
+INSERT INTO `log` VALUES ('133', 'Salio del sistema', '3', '2020-04-03', '17:44:17');
+INSERT INTO `log` VALUES ('134', 'Salio del sistema', '3', '2020-04-03', '17:46:58');
+INSERT INTO `log` VALUES ('135', 'Ingreso al sistema', '3', '2020-04-03', '17:48:23');
+INSERT INTO `log` VALUES ('136', 'Salio del sistema', '3', '2020-04-03', '17:48:29');
+INSERT INTO `log` VALUES ('137', 'Ingreso al sistema', '3', '2020-04-03', '17:48:47');
+INSERT INTO `log` VALUES ('138', 'Salio del sistema', '3', '2020-04-03', '17:48:52');
+INSERT INTO `log` VALUES ('139', 'Ingreso al sistema', '3', '2020-04-03', '17:50:16');
+INSERT INTO `log` VALUES ('140', 'Salio del sistema', '3', '2020-04-03', '17:50:22');
+INSERT INTO `log` VALUES ('141', 'Ingreso al sistema', '3', '2020-04-03', '18:12:06');
+INSERT INTO `log` VALUES ('142', 'Salio del sistema', '3', '2020-04-03', '18:12:11');
+INSERT INTO `log` VALUES ('143', 'Salio del sistema', '3', '2020-04-03', '18:13:47');
+INSERT INTO `log` VALUES ('144', 'Ingreso al sistema', '3', '2020-04-03', '18:14:42');
+INSERT INTO `log` VALUES ('145', 'Salio del sistema', '3', '2020-04-03', '18:14:47');
+INSERT INTO `log` VALUES ('146', 'Ingreso al sistema', '3', '2020-04-03', '18:21:12');
+INSERT INTO `log` VALUES ('147', 'Salio del sistema', '3', '2020-04-03', '18:21:18');
+INSERT INTO `log` VALUES ('148', 'Ingreso al sistema', '3', '2020-04-03', '18:21:47');
+INSERT INTO `log` VALUES ('149', 'Salio del sistema', '3', '2020-04-03', '18:22:06');
+INSERT INTO `log` VALUES ('150', 'Ingreso al sistema', '3', '2020-04-03', '18:53:56');
+INSERT INTO `log` VALUES ('151', 'Salio del sistema', '3', '2020-04-03', '19:07:02');
+INSERT INTO `log` VALUES ('152', 'Ingreso al sistema', '3', '2020-04-05', '17:12:58');
+INSERT INTO `log` VALUES ('153', 'Ha cambiado al tema Chopes', '3', '2020-04-05', '17:13:04');
+INSERT INTO `log` VALUES ('154', 'Ha cambiado al tema Chopes', '3', '2020-04-05', '17:14:49');
+INSERT INTO `log` VALUES ('155', 'Ha cambiado al tema Azul Britanico', '3', '2020-04-05', '17:14:52');
+INSERT INTO `log` VALUES ('156', 'Ha cambiado al tema Chopes', '3', '2020-04-05', '17:14:54');
+INSERT INTO `log` VALUES ('157', 'Ha cambiado al tema Azul Britanico', '3', '2020-04-05', '17:14:57');
+INSERT INTO `log` VALUES ('158', 'Salio del sistema', '3', '2020-04-05', '17:15:13');
+INSERT INTO `log` VALUES ('159', 'Ingreso al sistema', '3', '2020-04-05', '17:18:11');
+INSERT INTO `log` VALUES ('160', 'Salio del sistema', '3', '2020-04-05', '17:18:26');
+INSERT INTO `log` VALUES ('161', 'Ingreso al sistema', '3', '2020-04-05', '17:18:36');
+INSERT INTO `log` VALUES ('162', 'Salio del sistema', '3', '2020-04-05', '17:18:55');
+INSERT INTO `log` VALUES ('163', 'Ingreso al sistema', '3', '2020-04-05', '17:29:34');
+INSERT INTO `log` VALUES ('164', 'Ha cambiado al tema Chopes', '3', '2020-04-05', '17:29:41');
+INSERT INTO `log` VALUES ('165', 'Ha cambiado al tema Adolfo', '3', '2020-04-05', '17:29:53');
+INSERT INTO `log` VALUES ('166', 'Ha cambiado al tema Cool', '3', '2020-04-05', '17:30:04');
+INSERT INTO `log` VALUES ('167', 'Ha cambiado al tema Adolfo', '3', '2020-04-05', '17:30:15');
+INSERT INTO `log` VALUES ('168', 'Ha cambiado al tema Grey and Blue', '3', '2020-04-05', '17:30:45');
+INSERT INTO `log` VALUES ('169', 'Ha cambiado al tema Dark Green', '3', '2020-04-05', '17:31:22');
+INSERT INTO `log` VALUES ('170', 'Ha cambiado al tema Cool', '3', '2020-04-05', '17:31:27');
+INSERT INTO `log` VALUES ('171', 'Ha cambiado al tema Azul Britanico', '3', '2020-04-05', '17:32:43');
+INSERT INTO `log` VALUES ('172', 'Salio del sistema', '3', '2020-04-05', '17:32:49');
+INSERT INTO `log` VALUES ('173', 'Ingreso al sistema', '3', '2020-04-05', '17:42:16');
+INSERT INTO `log` VALUES ('174', 'Salio del sistema', '3', '2020-04-05', '17:42:33');
+INSERT INTO `log` VALUES ('175', 'Ingreso al sistema', '3', '2020-04-05', '17:48:27');
+INSERT INTO `log` VALUES ('176', 'Ha cambiado al tema Chopes', '3', '2020-04-05', '17:48:36');
+INSERT INTO `log` VALUES ('177', 'Ingreso al sistema', '3', '2020-04-07', '01:43:07');
+INSERT INTO `log` VALUES ('178', 'Ingreso al sistema', '3', '2020-04-08', '16:03:41');
+INSERT INTO `log` VALUES ('179', 'Ingreso al sistema', '3', '2020-04-08', '16:06:11');
+INSERT INTO `log` VALUES ('180', 'Ingreso al sistema', '3', '2020-04-08', '16:06:58');
+INSERT INTO `log` VALUES ('181', 'Ingreso al sistema', '3', '2020-04-08', '16:08:26');
+INSERT INTO `log` VALUES ('182', 'Ingreso al sistema', '3', '2020-04-08', '16:10:42');
+INSERT INTO `log` VALUES ('183', 'Ingreso al sistema', '3', '2020-04-08', '16:11:12');
+INSERT INTO `log` VALUES ('184', 'Salio del sistema', '3', '2020-04-08', '16:14:31');
+INSERT INTO `log` VALUES ('185', 'Ingreso al sistema', '1', '2020-04-12', '16:38:01');
+INSERT INTO `log` VALUES ('186', 'Salio del sistema', '1', '2020-04-12', '16:38:57');
+INSERT INTO `log` VALUES ('187', 'Ingreso al sistema', '1', '2020-04-12', '16:39:07');
+INSERT INTO `log` VALUES ('188', 'Ingreso al sistema', '1', '2020-04-12', '16:39:16');
+INSERT INTO `log` VALUES ('189', 'Salio del sistema', '1', '2020-04-12', '16:40:40');
+INSERT INTO `log` VALUES ('190', 'Ingreso al sistema', '1', '2020-04-12', '16:40:49');
+INSERT INTO `log` VALUES ('191', 'Ingreso al sistema', '1', '2020-04-12', '16:40:59');
+INSERT INTO `log` VALUES ('192', 'Salio del sistema', '1', '2020-04-12', '16:52:08');
+INSERT INTO `log` VALUES ('193', 'Ingreso al sistema', '1', '2020-04-12', '16:59:40');
+INSERT INTO `log` VALUES ('194', 'Salio del sistema', '1', '2020-04-12', '17:02:41');
+INSERT INTO `log` VALUES ('195', 'Ingreso al sistema', '1', '2020-04-12', '17:03:31');
+INSERT INTO `log` VALUES ('196', 'Salio del sistema', '1', '2020-04-12', '17:05:00');
+INSERT INTO `log` VALUES ('197', 'Ingreso al sistema', '1', '2020-04-12', '17:05:07');
+INSERT INTO `log` VALUES ('198', 'Salio del sistema', '1', '2020-04-12', '17:08:04');
+INSERT INTO `log` VALUES ('199', 'Ingreso al sistema', '1', '2020-04-12', '17:08:10');
+INSERT INTO `log` VALUES ('200', 'Ha cambiado al tema Adolfo', '1', '2020-04-12', '17:08:21');
+INSERT INTO `log` VALUES ('201', 'Ha cambiado al tema Azul Britanico', '1', '2020-04-12', '17:08:24');
+INSERT INTO `log` VALUES ('202', 'Salio del sistema', '1', '2020-04-12', '17:10:09');
+INSERT INTO `log` VALUES ('203', 'Ingreso al sistema', '1', '2020-04-12', '17:10:35');
+INSERT INTO `log` VALUES ('204', 'Ingreso al sistema', '1', '2020-04-12', '17:11:59');
+INSERT INTO `log` VALUES ('205', 'Ingreso al sistema', '1', '2020-04-12', '17:13:10');
+INSERT INTO `log` VALUES ('206', 'Ingreso al sistema', '1', '2020-04-12', '17:15:14');
+INSERT INTO `log` VALUES ('207', 'Salio del sistema', '1', '2020-04-12', '17:17:01');
+INSERT INTO `log` VALUES ('208', 'Ingreso al sistema', '3', '2020-04-12', '17:17:18');
+INSERT INTO `log` VALUES ('209', 'Ingreso al sistema', '3', '2020-04-12', '18:15:49');
+INSERT INTO `log` VALUES ('210', 'Salio del sistema', '3', '2020-04-12', '18:15:54');
+INSERT INTO `log` VALUES ('211', 'Ingreso al sistema', '3', '2020-04-12', '18:16:36');
+INSERT INTO `log` VALUES ('212', 'Salio del sistema', '3', '2020-04-12', '18:17:16');
+INSERT INTO `log` VALUES ('213', 'Ingreso al sistema', '3', '2020-04-12', '18:19:18');
+INSERT INTO `log` VALUES ('214', 'Salio del sistema', '3', '2020-04-12', '18:19:34');
+INSERT INTO `log` VALUES ('215', 'Ingreso al sistema', '3', '2020-04-12', '18:20:44');
+INSERT INTO `log` VALUES ('216', 'Salio del sistema', '3', '2020-04-12', '18:20:49');
+INSERT INTO `log` VALUES ('217', 'Ingreso al sistema', '3', '2020-04-12', '18:21:24');
+INSERT INTO `log` VALUES ('218', 'Salio del sistema', '3', '2020-04-12', '18:21:43');
+INSERT INTO `log` VALUES ('219', 'Ingreso al sistema', '3', '2020-04-12', '18:21:47');
+INSERT INTO `log` VALUES ('220', 'Salio del sistema', '3', '2020-04-12', '18:21:52');
+INSERT INTO `log` VALUES ('221', 'Ingreso al sistema', '3', '2020-04-12', '18:21:58');
+INSERT INTO `log` VALUES ('222', 'Salio del sistema', '3', '2020-04-12', '18:23:06');
+INSERT INTO `log` VALUES ('223', 'Ingreso al sistema', '3', '2020-04-13', '15:32:04');
+INSERT INTO `log` VALUES ('224', 'Ingreso al sistema', '3', '2020-04-13', '15:49:32');
+INSERT INTO `log` VALUES ('225', 'Ha cambiado al tema Adolfo', '3', '2020-04-13', '15:49:39');
+INSERT INTO `log` VALUES ('226', 'Ha cambiado al tema Azul Britanico', '3', '2020-04-13', '15:49:46');
+INSERT INTO `log` VALUES ('227', 'Ha cambiado al tema Chopes', '3', '2020-04-13', '15:49:50');
+INSERT INTO `log` VALUES ('228', 'Ha cambiado al tema Night', '3', '2020-04-13', '15:49:53');
+INSERT INTO `log` VALUES ('229', 'Ha cambiado al tema Chopes', '3', '2020-04-13', '15:50:04');
+INSERT INTO `log` VALUES ('230', 'Ha cambiado al tema German Team', '3', '2020-04-13', '15:50:08');
+INSERT INTO `log` VALUES ('231', 'Ha cambiado al tema Hospital Linares', '3', '2020-04-13', '15:50:20');
+INSERT INTO `log` VALUES ('232', 'Salio del sistema', '3', '2020-04-13', '15:50:26');
+INSERT INTO `log` VALUES ('233', 'Ingreso al sistema', '3', '2020-04-14', '17:45:42');
+INSERT INTO `log` VALUES ('234', 'Ha cambiado al tema Adolfo', '3', '2020-04-14', '17:45:47');
+INSERT INTO `log` VALUES ('235', 'Ha cambiado al tema Azul Britanico', '3', '2020-04-14', '17:45:50');
+INSERT INTO `log` VALUES ('236', 'Ha cambiado al tema Dark Green', '3', '2020-04-14', '17:47:13');
+INSERT INTO `log` VALUES ('237', 'Ha cambiado al tema Chopes', '3', '2020-04-14', '17:47:17');
+INSERT INTO `log` VALUES ('238', 'Ha cambiado al tema UTLinares', '3', '2020-04-14', '17:47:20');
+INSERT INTO `log` VALUES ('239', 'Ha cambiado al tema Grey and Blue', '3', '2020-04-14', '17:48:43');
+INSERT INTO `log` VALUES ('240', 'Ha cambiado al tema UTLinares', '3', '2020-04-14', '17:48:46');
+INSERT INTO `log` VALUES ('241', 'Ha cambiado al tema Oscuro', '3', '2020-04-14', '17:48:50');
+INSERT INTO `log` VALUES ('242', 'Ha cambiado al tema Night', '3', '2020-04-14', '17:48:56');
+INSERT INTO `log` VALUES ('243', 'Ha cambiado al tema Obscuro Clasico', '3', '2020-04-14', '17:49:05');
+INSERT INTO `log` VALUES ('244', 'Ha cambiado al tema Oscuro', '3', '2020-04-14', '17:49:12');
+INSERT INTO `log` VALUES ('245', 'Ha cambiado al tema Azul Britanico', '3', '2020-04-14', '17:49:28');
+INSERT INTO `log` VALUES ('246', 'Ha cambiado al tema German Team', '3', '2020-04-14', '17:50:18');
+INSERT INTO `log` VALUES ('247', 'Ha cambiado al tema Azul Britanico', '3', '2020-04-14', '17:50:22');
+INSERT INTO `log` VALUES ('248', 'Ha cambiado al tema Azul Britanico', '3', '2020-04-14', '17:55:29');
+INSERT INTO `log` VALUES ('249', 'Ha cambiado al tema Grey and Blue', '3', '2020-04-14', '17:55:34');
+INSERT INTO `log` VALUES ('250', 'Ha cambiado al tema Azul Britanico', '3', '2020-04-14', '17:55:39');
+INSERT INTO `log` VALUES ('251', 'Ha cambiado al tema Grey and Blue', '3', '2020-04-14', '17:55:43');
+INSERT INTO `log` VALUES ('252', 'Ha cambiado al tema Obscuro Clasico', '3', '2020-04-14', '17:55:46');
+INSERT INTO `log` VALUES ('253', 'Ha cambiado al tema Azul Britanico', '3', '2020-04-14', '18:07:05');
+INSERT INTO `log` VALUES ('254', 'Ha cambiado al tema Chopes', '3', '2020-04-14', '18:14:59');
+INSERT INTO `log` VALUES ('255', 'Ha cambiado al tema Hospital Linares', '3', '2020-04-14', '18:15:02');
+INSERT INTO `log` VALUES ('256', 'Ha cambiado al tema Snarky', '3', '2020-04-14', '18:15:05');
+INSERT INTO `log` VALUES ('257', 'Ha cambiado al tema Azul Britanico', '3', '2020-04-14', '18:15:09');
+INSERT INTO `log` VALUES ('258', 'Ha cambiado al tema ITLinares Alternativo', '3', '2020-04-14', '18:16:35');
+INSERT INTO `log` VALUES ('259', 'Ha cambiado al tema CHyP', '3', '2020-04-14', '18:16:38');
+INSERT INTO `log` VALUES ('260', 'Ha cambiado al tema Oscuro', '3', '2020-04-14', '18:16:41');
+INSERT INTO `log` VALUES ('261', 'Ha cambiado al tema Dark Green', '3', '2020-04-14', '18:16:44');
+INSERT INTO `log` VALUES ('262', 'Ha cambiado al tema Azul Britanico', '3', '2020-04-14', '18:16:46');
+INSERT INTO `log` VALUES ('263', 'Ha cambiado al tema Cool', '3', '2020-04-14', '18:17:48');
+INSERT INTO `log` VALUES ('264', 'Ha cambiado al tema ITLinares', '3', '2020-04-14', '18:17:51');
+INSERT INTO `log` VALUES ('265', 'Ha cambiado al tema Chopes', '3', '2020-04-14', '18:17:54');
+INSERT INTO `log` VALUES ('266', 'Ingreso al sistema', '3', '2020-04-16', '17:15:00');
+INSERT INTO `log` VALUES ('267', 'Ingreso al sistema', '3', '2020-04-16', '19:03:40');
+INSERT INTO `log` VALUES ('268', 'Ingreso al sistema', '3', '2020-04-16', '19:39:06');
+INSERT INTO `log` VALUES ('269', 'Ingreso al sistema', '3', '2020-04-16', '19:39:56');
+INSERT INTO `log` VALUES ('270', 'Ingreso al sistema', '3', '2020-04-16', '19:42:01');
+INSERT INTO `log` VALUES ('271', 'Ingreso al sistema', '3', '2020-04-16', '19:44:24');
+INSERT INTO `log` VALUES ('272', 'Ingreso al sistema', '3', '2020-04-16', '20:02:47');
+INSERT INTO `log` VALUES ('273', 'Ingreso al sistema', '3', '2020-04-16', '20:03:30');
+INSERT INTO `log` VALUES ('274', 'Ingreso al sistema', '3', '2020-04-16', '20:08:04');
+INSERT INTO `log` VALUES ('275', 'Ingreso al sistema', '3', '2020-04-16', '20:10:06');
+INSERT INTO `log` VALUES ('276', 'Ingreso al sistema', '3', '2020-04-16', '20:11:35');
+INSERT INTO `log` VALUES ('277', 'Ingreso al sistema', '3', '2020-04-16', '20:12:15');
+INSERT INTO `log` VALUES ('278', 'Ingreso al sistema', '3', '2020-04-16', '20:13:33');
+INSERT INTO `log` VALUES ('279', 'Ingreso al sistema', '3', '2020-04-16', '20:15:41');
+INSERT INTO `log` VALUES ('280', 'Ingreso al sistema', '3', '2020-04-16', '20:16:07');
+INSERT INTO `log` VALUES ('281', 'Ingreso al sistema', '3', '2020-04-16', '20:16:26');
+INSERT INTO `log` VALUES ('282', 'Ingreso al sistema', '3', '2020-04-16', '20:17:27');
+INSERT INTO `log` VALUES ('283', 'Ingreso al sistema', '3', '2020-04-16', '20:17:55');
+INSERT INTO `log` VALUES ('284', 'Ingreso al sistema', '3', '2020-04-16', '20:20:30');
+INSERT INTO `log` VALUES ('285', 'Ingreso al sistema', '3', '2020-04-16', '20:21:41');
+INSERT INTO `log` VALUES ('286', 'Ingreso al sistema', '3', '2020-04-16', '20:22:05');
+INSERT INTO `log` VALUES ('287', 'Ingreso al sistema', '3', '2020-04-16', '20:22:40');
+INSERT INTO `log` VALUES ('288', 'Ingreso al sistema', '3', '2020-04-16', '20:23:57');
+INSERT INTO `log` VALUES ('289', 'Ingreso al sistema', '3', '2020-04-16', '20:24:33');
+INSERT INTO `log` VALUES ('290', 'Ingreso al sistema', '3', '2020-04-16', '20:25:09');
+INSERT INTO `log` VALUES ('291', 'Ingreso al sistema', '3', '2020-04-16', '20:25:57');
+INSERT INTO `log` VALUES ('292', 'Ingreso al sistema', '3', '2020-04-16', '20:26:44');
+INSERT INTO `log` VALUES ('293', 'Ingreso al sistema', '3', '2020-04-16', '20:27:55');
+INSERT INTO `log` VALUES ('294', 'Ingreso al sistema', '3', '2020-04-16', '20:30:39');
+INSERT INTO `log` VALUES ('295', 'Ingreso al sistema', '3', '2020-04-16', '20:31:18');
+INSERT INTO `log` VALUES ('296', 'Ingreso al sistema', '3', '2020-04-16', '20:33:04');
+INSERT INTO `log` VALUES ('297', 'Ingreso al sistema', '3', '2020-04-16', '20:34:04');
+INSERT INTO `log` VALUES ('298', 'Ingreso al sistema', '3', '2020-04-16', '20:34:25');
+INSERT INTO `log` VALUES ('299', 'Ingreso al sistema', '3', '2020-04-16', '20:35:13');
+INSERT INTO `log` VALUES ('300', 'Ingreso al sistema', '3', '2020-04-16', '20:36:20');
+INSERT INTO `log` VALUES ('301', 'Ingreso al sistema', '3', '2020-04-16', '20:37:11');
+INSERT INTO `log` VALUES ('302', 'Ingreso al sistema', '3', '2020-04-16', '20:37:48');
+INSERT INTO `log` VALUES ('303', 'Ingreso al sistema', '3', '2020-04-16', '20:43:25');
+INSERT INTO `log` VALUES ('304', 'Ingreso al sistema', '3', '2020-04-16', '20:47:06');
+INSERT INTO `log` VALUES ('305', 'Ingreso al sistema', '3', '2020-04-16', '20:47:28');
+INSERT INTO `log` VALUES ('306', 'Ingreso al sistema', '3', '2020-04-17', '16:34:25');
+INSERT INTO `log` VALUES ('307', 'Ingreso al sistema', '3', '2020-04-17', '16:38:51');
+INSERT INTO `log` VALUES ('308', 'Ingreso al sistema', '3', '2020-04-17', '18:20:19');
+INSERT INTO `log` VALUES ('309', 'Ingreso al sistema', '3', '2020-04-17', '18:21:01');
+INSERT INTO `log` VALUES ('310', 'Ingreso al sistema', '3', '2020-04-17', '18:22:13');
+INSERT INTO `log` VALUES ('311', 'Ingreso al sistema', '3', '2020-04-17', '18:22:57');
+INSERT INTO `log` VALUES ('312', 'Ingreso al sistema', '3', '2020-04-17', '18:23:49');
+INSERT INTO `log` VALUES ('313', 'Ingreso al sistema', '3', '2020-04-17', '18:27:00');
+INSERT INTO `log` VALUES ('314', 'Ingreso al sistema', '3', '2020-04-17', '18:27:41');
+INSERT INTO `log` VALUES ('315', 'Ingreso al sistema', '3', '2020-04-17', '18:28:12');
+INSERT INTO `log` VALUES ('316', 'Ingreso al sistema', '3', '2020-04-17', '18:34:58');
+INSERT INTO `log` VALUES ('317', 'Ingreso al sistema', '3', '2020-04-17', '18:35:49');
+INSERT INTO `log` VALUES ('318', 'Ingreso al sistema', '3', '2020-04-17', '18:37:40');
+INSERT INTO `log` VALUES ('319', 'Ingreso al sistema', '3', '2020-04-17', '18:38:37');
+INSERT INTO `log` VALUES ('320', 'Ingreso al sistema', '3', '2020-04-17', '18:39:53');
+INSERT INTO `log` VALUES ('321', 'Ingreso al sistema', '3', '2020-04-17', '18:41:44');
+INSERT INTO `log` VALUES ('322', 'Ingreso al sistema', '3', '2020-04-17', '18:49:17');
+INSERT INTO `log` VALUES ('323', 'Ingreso al sistema', '3', '2020-04-17', '18:50:16');
+INSERT INTO `log` VALUES ('324', 'Ingreso al sistema', '3', '2020-04-17', '18:50:57');
+INSERT INTO `log` VALUES ('325', 'Ingreso al sistema', '3', '2020-04-17', '18:53:20');
+INSERT INTO `log` VALUES ('326', 'Ingreso al sistema', '3', '2020-04-17', '18:53:46');
+INSERT INTO `log` VALUES ('327', 'Ingreso al sistema', '3', '2020-04-17', '18:55:48');
+INSERT INTO `log` VALUES ('328', 'Ingreso al sistema', '3', '2020-04-17', '18:56:12');
+INSERT INTO `log` VALUES ('329', 'Ingreso al sistema', '3', '2020-04-17', '19:01:01');
+INSERT INTO `log` VALUES ('330', 'Ingreso al sistema', '3', '2020-04-17', '19:01:31');
+INSERT INTO `log` VALUES ('331', 'Ingreso al sistema', '3', '2020-04-17', '19:02:04');
+INSERT INTO `log` VALUES ('332', 'Ingreso al sistema', '3', '2020-04-17', '19:02:58');
+INSERT INTO `log` VALUES ('333', 'Ingreso al sistema', '3', '2020-04-17', '19:03:55');
+INSERT INTO `log` VALUES ('334', 'Ingreso al sistema', '3', '2020-04-17', '19:04:19');
+INSERT INTO `log` VALUES ('335', 'Ingreso al sistema', '3', '2020-04-17', '19:06:25');
+INSERT INTO `log` VALUES ('336', 'Ingreso al sistema', '3', '2020-04-17', '19:06:56');
+INSERT INTO `log` VALUES ('337', 'Ingreso al sistema', '3', '2020-04-17', '19:11:00');
+INSERT INTO `log` VALUES ('338', 'Ingreso al sistema', '3', '2020-04-17', '19:12:39');
+INSERT INTO `log` VALUES ('339', 'Ingreso al sistema', '3', '2020-04-17', '19:13:31');
+INSERT INTO `log` VALUES ('340', 'Ingreso al sistema', '3', '2020-04-17', '19:14:00');
+INSERT INTO `log` VALUES ('341', 'Ingreso al sistema', '3', '2020-04-17', '19:18:19');
+INSERT INTO `log` VALUES ('342', 'Ingreso al sistema', '3', '2020-04-17', '19:18:48');
+INSERT INTO `log` VALUES ('343', 'Ingreso al sistema', '3', '2020-04-17', '19:19:22');
+INSERT INTO `log` VALUES ('344', 'Ingreso al sistema', '3', '2020-04-17', '19:21:49');
+INSERT INTO `log` VALUES ('345', 'Ingreso al sistema', '3', '2020-04-17', '19:22:35');
+INSERT INTO `log` VALUES ('346', 'Ingreso al sistema', '3', '2020-04-17', '19:23:13');
+INSERT INTO `log` VALUES ('347', 'Ingreso al sistema', '3', '2020-04-17', '19:24:17');
+INSERT INTO `log` VALUES ('348', 'Ingreso al sistema', '3', '2020-04-17', '19:24:58');
+INSERT INTO `log` VALUES ('349', 'Ingreso al sistema', '3', '2020-04-17', '19:27:01');
+INSERT INTO `log` VALUES ('350', 'Ingreso al sistema', '3', '2020-04-17', '19:28:32');
+INSERT INTO `log` VALUES ('351', 'Ingreso al sistema', '3', '2020-04-17', '19:30:29');
+INSERT INTO `log` VALUES ('352', 'Ingreso al sistema', '3', '2020-04-17', '19:32:36');
+INSERT INTO `log` VALUES ('353', 'Ingreso al sistema', '3', '2020-04-17', '19:33:49');
+INSERT INTO `log` VALUES ('354', 'Ingreso al sistema', '3', '2020-04-17', '19:37:16');
+INSERT INTO `log` VALUES ('355', 'Ingreso al sistema', '3', '2020-04-17', '19:42:16');
+INSERT INTO `log` VALUES ('356', 'Ingreso al sistema', '3', '2020-04-17', '19:43:13');
+INSERT INTO `log` VALUES ('357', 'Ingreso al sistema', '3', '2020-04-17', '19:44:12');
+INSERT INTO `log` VALUES ('358', 'Ingreso al sistema', '3', '2020-04-17', '19:45:15');
+INSERT INTO `log` VALUES ('359', 'Ingreso al sistema', '3', '2020-04-17', '19:47:32');
+INSERT INTO `log` VALUES ('360', 'Ingreso al sistema', '3', '2020-04-17', '19:48:22');
+INSERT INTO `log` VALUES ('361', 'Ingreso al sistema', '3', '2020-04-17', '19:49:47');
+INSERT INTO `log` VALUES ('362', 'Ingreso al sistema', '3', '2020-04-17', '19:50:41');
+INSERT INTO `log` VALUES ('363', 'Ingreso al sistema', '3', '2020-04-17', '19:51:34');
+INSERT INTO `log` VALUES ('364', 'Ingreso al sistema', '3', '2020-04-17', '21:27:06');
+INSERT INTO `log` VALUES ('365', 'Ingreso al sistema', '3', '2020-04-17', '21:27:51');
+INSERT INTO `log` VALUES ('366', 'Ingreso al sistema', '3', '2020-04-17', '21:35:25');
+INSERT INTO `log` VALUES ('367', 'Ingreso al sistema', '3', '2020-04-17', '21:36:38');
+INSERT INTO `log` VALUES ('368', 'Ingreso al sistema', '3', '2020-04-17', '21:40:35');
+INSERT INTO `log` VALUES ('369', 'Ingreso al sistema', '3', '2020-04-17', '21:59:25');
+INSERT INTO `log` VALUES ('370', 'Ingreso al sistema', '3', '2020-04-17', '22:01:43');
+INSERT INTO `log` VALUES ('371', 'Ingreso al sistema', '3', '2020-04-17', '22:07:25');
+INSERT INTO `log` VALUES ('372', 'Ingreso al sistema', '3', '2020-04-17', '22:08:27');
+INSERT INTO `log` VALUES ('373', 'Ingreso al sistema', '3', '2020-04-17', '22:09:49');
+INSERT INTO `log` VALUES ('374', 'Ingreso al sistema', '3', '2020-04-17', '22:11:58');
+INSERT INTO `log` VALUES ('375', 'Ingreso al sistema', '3', '2020-04-17', '22:12:40');
+INSERT INTO `log` VALUES ('376', 'Ingreso al sistema', '3', '2020-04-17', '22:17:11');
+INSERT INTO `log` VALUES ('377', 'Ingreso al sistema', '3', '2020-04-17', '22:22:09');
+INSERT INTO `log` VALUES ('378', 'Ingreso al sistema', '3', '2020-04-17', '22:24:01');
+INSERT INTO `log` VALUES ('379', 'Ingreso al sistema', '3', '2020-04-17', '22:25:09');
+INSERT INTO `log` VALUES ('380', 'Ingreso al sistema', '3', '2020-04-17', '22:26:43');
+INSERT INTO `log` VALUES ('381', 'Ingreso al sistema', '3', '2020-04-17', '22:28:27');
+INSERT INTO `log` VALUES ('382', 'Ingreso al sistema', '3', '2020-04-17', '22:29:46');
+INSERT INTO `log` VALUES ('383', 'Ingreso al sistema', '3', '2020-04-17', '22:30:43');
+INSERT INTO `log` VALUES ('384', 'Ingreso al sistema', '3', '2020-04-17', '22:31:27');
+INSERT INTO `log` VALUES ('385', 'Ingreso al sistema', '3', '2020-04-17', '22:33:37');
+INSERT INTO `log` VALUES ('386', 'Ingreso al sistema', '3', '2020-04-17', '22:34:23');
+INSERT INTO `log` VALUES ('387', 'Ingreso al sistema', '3', '2020-04-17', '22:35:56');
+INSERT INTO `log` VALUES ('388', 'Ingreso al sistema', '3', '2020-04-17', '22:36:55');
+INSERT INTO `log` VALUES ('389', 'Ingreso al sistema', '3', '2020-04-17', '22:37:50');
+INSERT INTO `log` VALUES ('390', 'Ingreso al sistema', '3', '2020-04-17', '22:38:53');
+INSERT INTO `log` VALUES ('391', 'Ingreso al sistema', '3', '2020-04-17', '22:40:03');
+INSERT INTO `log` VALUES ('392', 'Ingreso al sistema', '3', '2020-04-17', '23:02:33');
+INSERT INTO `log` VALUES ('393', 'Ingreso al sistema', '3', '2020-04-17', '23:13:53');
+INSERT INTO `log` VALUES ('394', 'Ingreso al sistema', '3', '2020-04-17', '23:14:22');
+INSERT INTO `log` VALUES ('395', 'Ingreso al sistema', '3', '2020-04-17', '23:15:26');
+INSERT INTO `log` VALUES ('396', 'Ingreso al sistema', '3', '2020-04-17', '23:16:18');
+INSERT INTO `log` VALUES ('397', 'Ingreso al sistema', '3', '2020-04-17', '23:21:15');
+INSERT INTO `log` VALUES ('398', 'Ingreso al sistema', '3', '2020-04-17', '23:23:49');
+INSERT INTO `log` VALUES ('399', 'Ingreso al sistema', '3', '2020-04-17', '23:29:02');
+INSERT INTO `log` VALUES ('400', 'Ingreso al sistema', '3', '2020-04-17', '23:33:19');
+INSERT INTO `log` VALUES ('401', 'Ingreso al sistema', '3', '2020-04-18', '16:39:52');
+INSERT INTO `log` VALUES ('402', 'Ingreso al sistema', '3', '2020-04-18', '16:40:41');
+INSERT INTO `log` VALUES ('403', 'Ingreso al sistema', '3', '2020-04-18', '16:42:24');
+INSERT INTO `log` VALUES ('404', 'Ingreso al sistema', '3', '2020-04-18', '16:45:36');
+INSERT INTO `log` VALUES ('405', 'Ingreso al sistema', '3', '2020-04-18', '16:50:18');
+INSERT INTO `log` VALUES ('406', 'Ingreso al sistema', '3', '2020-04-18', '16:56:44');
+INSERT INTO `log` VALUES ('407', 'Ingreso al sistema', '3', '2020-04-18', '17:08:49');
+INSERT INTO `log` VALUES ('408', 'Ingreso al sistema', '3', '2020-04-18', '17:10:58');
+INSERT INTO `log` VALUES ('409', 'Ingreso al sistema', '3', '2020-04-18', '17:14:01');
+INSERT INTO `log` VALUES ('410', 'Ingreso al sistema', '3', '2020-04-18', '19:50:09');
+INSERT INTO `log` VALUES ('411', 'Ingreso al sistema', '3', '2020-04-18', '19:50:58');
+INSERT INTO `log` VALUES ('412', 'Ingreso al sistema', '3', '2020-04-18', '21:30:57');
+INSERT INTO `log` VALUES ('413', 'Ingreso al sistema', '3', '2020-04-18', '21:32:39');
+INSERT INTO `log` VALUES ('414', 'Ingreso al sistema', '3', '2020-04-18', '21:33:31');
+INSERT INTO `log` VALUES ('415', 'Ingreso al sistema', '3', '2020-04-18', '21:41:49');
+INSERT INTO `log` VALUES ('416', 'Ingreso al sistema', '3', '2020-04-18', '21:44:08');
+INSERT INTO `log` VALUES ('417', 'Ingreso al sistema', '3', '2020-04-18', '21:46:08');
+INSERT INTO `log` VALUES ('418', 'Ingreso al sistema', '3', '2020-04-18', '21:48:27');
+INSERT INTO `log` VALUES ('419', 'Ingreso al sistema', '3', '2020-04-18', '22:06:55');
+INSERT INTO `log` VALUES ('420', 'Ingreso al sistema', '3', '2020-04-18', '22:07:18');
+INSERT INTO `log` VALUES ('421', 'Ingreso al sistema', '3', '2020-04-18', '22:13:22');
+INSERT INTO `log` VALUES ('422', 'Ingreso al sistema', '3', '2020-04-18', '22:19:56');
+INSERT INTO `log` VALUES ('423', 'Ingreso al sistema', '3', '2020-04-18', '22:21:45');
+INSERT INTO `log` VALUES ('424', 'Ingreso al sistema', '3', '2020-04-18', '22:24:01');
+INSERT INTO `log` VALUES ('425', 'Ingreso al sistema', '3', '2020-04-18', '22:25:40');
+INSERT INTO `log` VALUES ('426', 'Se ha actualizado el horario para la persona José Luis Margarito Escalona Garza', '3', '2020-04-18', '22:25:58');
+INSERT INTO `log` VALUES ('427', 'Ingreso al sistema', '3', '2020-04-18', '22:34:23');
+INSERT INTO `log` VALUES ('428', 'Se ha actualizado el horario para la persona José Luis Margarito Escalona Garza', '3', '2020-04-18', '22:34:34');
+INSERT INTO `log` VALUES ('429', 'Ingreso al sistema', '3', '2020-04-18', '22:35:56');
+INSERT INTO `log` VALUES ('430', 'Se ha actualizado el horario para la persona José Luis Margarito Escalona Garza', '3', '2020-04-18', '22:36:04');
+INSERT INTO `log` VALUES ('431', 'Ingreso al sistema', '3', '2020-04-18', '22:38:50');
+INSERT INTO `log` VALUES ('432', 'Se ha creado un horario para la persona José Luis Margarito Escalona Garza', '3', '2020-04-18', '22:38:58');
+INSERT INTO `log` VALUES ('433', 'Ingreso al sistema', '3', '2020-04-18', '22:51:51');
+INSERT INTO `log` VALUES ('434', 'Ingreso al sistema', '3', '2020-04-18', '22:55:13');
+INSERT INTO `log` VALUES ('435', 'Ingreso al sistema', '3', '2020-04-18', '22:56:44');
+INSERT INTO `log` VALUES ('436', 'Ingreso al sistema', '3', '2020-04-18', '22:58:24');
+INSERT INTO `log` VALUES ('437', 'Ingreso al sistema', '3', '2020-04-18', '22:59:02');
+INSERT INTO `log` VALUES ('438', 'Se ha creado un horario para la persona Víctor Hugo Perez Briseño', '3', '2020-04-18', '22:59:13');
+INSERT INTO `log` VALUES ('439', 'Ingreso al sistema', '3', '2020-04-18', '22:59:38');
+INSERT INTO `log` VALUES ('440', 'Ingreso al sistema', '3', '2020-04-18', '23:02:27');
+INSERT INTO `log` VALUES ('441', 'Ingreso al sistema', '3', '2020-04-18', '23:03:38');
+INSERT INTO `log` VALUES ('442', 'Ingreso al sistema', '3', '2020-04-18', '23:04:14');
+INSERT INTO `log` VALUES ('443', 'Ingreso al sistema', '3', '2020-04-18', '23:09:46');
+INSERT INTO `log` VALUES ('444', 'Ingreso al sistema', '3', '2020-04-18', '23:10:24');
+INSERT INTO `log` VALUES ('445', 'Ingreso al sistema', '3', '2020-04-18', '23:12:48');
+INSERT INTO `log` VALUES ('446', 'Se ha actualizado el horario para la persona Víctor Hugo Perez Briseño', '3', '2020-04-18', '23:13:05');
+INSERT INTO `log` VALUES ('447', 'Ingreso al sistema', '3', '2020-04-18', '23:14:33');
+INSERT INTO `log` VALUES ('448', 'Se ha actualizado el horario para la persona Víctor Hugo Perez Briseño', '3', '2020-04-18', '23:14:46');
+INSERT INTO `log` VALUES ('449', 'Ingreso al sistema', '3', '2020-04-18', '23:16:20');
+INSERT INTO `log` VALUES ('450', 'Se ha actualizado el horario para la persona Víctor Hugo Perez Briseño', '3', '2020-04-18', '23:16:29');
+INSERT INTO `log` VALUES ('451', 'Ingreso al sistema', '3', '2020-04-18', '23:17:28');
+INSERT INTO `log` VALUES ('452', 'Se ha actualizado el horario para la persona Víctor Hugo Perez Briseño', '3', '2020-04-18', '23:17:39');
+INSERT INTO `log` VALUES ('453', 'Se ha actualizado el horario para la persona Víctor Hugo Perez Briseño', '3', '2020-04-18', '23:18:54');
+INSERT INTO `log` VALUES ('454', 'Ingreso al sistema', '3', '2020-04-18', '23:25:24');
+INSERT INTO `log` VALUES ('455', 'Ingreso al sistema', '3', '2020-04-18', '23:28:13');
+INSERT INTO `log` VALUES ('456', 'Ingreso al sistema', '3', '2020-04-18', '23:31:39');
+INSERT INTO `log` VALUES ('457', 'Ingreso al sistema', '3', '2020-04-18', '23:35:24');
+INSERT INTO `log` VALUES ('458', 'Ingreso al sistema', '3', '2020-04-18', '23:37:57');
+INSERT INTO `log` VALUES ('459', 'Ingreso al sistema', '3', '2020-04-18', '23:38:23');
+INSERT INTO `log` VALUES ('460', 'Ingreso al sistema', '3', '2020-04-18', '23:38:46');
+INSERT INTO `log` VALUES ('461', 'Ingreso al sistema', '3', '2020-04-18', '23:39:08');
+INSERT INTO `log` VALUES ('462', 'Ingreso al sistema', '3', '2020-04-18', '23:39:30');
+INSERT INTO `log` VALUES ('463', 'Ingreso al sistema', '3', '2020-04-18', '23:40:59');
+INSERT INTO `log` VALUES ('464', 'Ingreso al sistema', '3', '2020-04-18', '23:41:49');
+INSERT INTO `log` VALUES ('465', 'Ingreso al sistema', '3', '2020-04-18', '23:42:02');
+INSERT INTO `log` VALUES ('466', 'Ingreso al sistema', '3', '2020-04-18', '23:42:20');
+INSERT INTO `log` VALUES ('467', 'Ingreso al sistema', '3', '2020-04-18', '23:43:14');
+INSERT INTO `log` VALUES ('468', 'Ingreso al sistema', '3', '2020-04-18', '23:45:16');
+INSERT INTO `log` VALUES ('469', 'Ingreso al sistema', '3', '2020-04-18', '23:46:07');
+INSERT INTO `log` VALUES ('470', 'Ingreso al sistema', '3', '2020-04-18', '23:46:36');
+INSERT INTO `log` VALUES ('471', 'Ingreso al sistema', '3', '2020-04-18', '23:47:02');
+INSERT INTO `log` VALUES ('472', 'Se ha actualizado el horario para la persona José Luis Margarito Escalona Garza', '3', '2020-04-18', '23:48:43');
+INSERT INTO `log` VALUES ('473', 'Ingreso al sistema', '3', '2020-04-18', '23:50:13');
+INSERT INTO `log` VALUES ('474', 'Ingreso al sistema', '3', '2020-04-18', '23:51:03');
+INSERT INTO `log` VALUES ('475', 'Ingreso al sistema', '3', '2020-04-18', '23:52:23');
+INSERT INTO `log` VALUES ('476', 'Ingreso al sistema', '3', '2020-04-18', '23:52:53');
+INSERT INTO `log` VALUES ('477', 'Ingreso al sistema', '3', '2020-04-19', '00:23:54');
+INSERT INTO `log` VALUES ('478', 'Ingreso al sistema', '3', '2020-04-19', '00:24:19');
+INSERT INTO `log` VALUES ('479', 'Ingreso al sistema', '3', '2020-04-19', '00:24:44');
+INSERT INTO `log` VALUES ('480', 'Ha cambiado al tema Azul Britanico', '3', '2020-04-19', '00:24:51');
+INSERT INTO `log` VALUES ('481', 'Ha cambiado al tema Dark Green', '3', '2020-04-19', '00:24:57');
+INSERT INTO `log` VALUES ('482', 'Ha cambiado al tema Obscuro Clasico', '3', '2020-04-19', '00:25:01');
+INSERT INTO `log` VALUES ('483', 'Ha cambiado al tema Chopes', '3', '2020-04-19', '00:25:04');
+INSERT INTO `log` VALUES ('484', 'Ingreso al sistema', '3', '2020-04-19', '00:26:47');
+INSERT INTO `log` VALUES ('485', 'Salio del sistema', '3', '2020-04-19', '00:26:52');
+INSERT INTO `log` VALUES ('486', 'Ingreso al sistema', '3', '2020-04-19', '00:28:12');
+INSERT INTO `log` VALUES ('487', 'Ingreso al sistema', '3', '2020-04-19', '00:28:39');
+INSERT INTO `log` VALUES ('488', 'Ingreso al sistema', '3', '2020-04-19', '00:31:58');
+INSERT INTO `log` VALUES ('489', 'Ingreso al sistema', '3', '2020-04-19', '01:02:14');
+INSERT INTO `log` VALUES ('490', 'Ingreso al sistema', '3', '2020-04-19', '01:05:37');
+INSERT INTO `log` VALUES ('491', 'Ingreso al sistema', '3', '2020-04-19', '01:10:34');
+INSERT INTO `log` VALUES ('492', 'Ingreso al sistema', '3', '2020-04-19', '01:14:55');
+INSERT INTO `log` VALUES ('493', 'Ingreso al sistema', '3', '2020-04-19', '16:42:03');
+INSERT INTO `log` VALUES ('494', 'Ingreso al sistema', '3', '2020-04-19', '16:44:32');
+INSERT INTO `log` VALUES ('495', 'Ingreso al sistema', '3', '2020-04-19', '16:45:20');
+INSERT INTO `log` VALUES ('496', 'Ingreso al sistema', '3', '2020-04-19', '16:57:25');
+INSERT INTO `log` VALUES ('497', 'Ingreso al sistema', '3', '2020-04-19', '17:06:13');
+INSERT INTO `log` VALUES ('498', 'Ingreso al sistema', '3', '2020-04-19', '17:08:31');
+INSERT INTO `log` VALUES ('499', 'Ingreso al sistema', '3', '2020-04-19', '17:11:42');
+INSERT INTO `log` VALUES ('500', 'Ingreso al sistema', '3', '2020-04-19', '17:14:07');
+INSERT INTO `log` VALUES ('501', 'Ingreso al sistema', '3', '2020-04-19', '17:18:59');
+INSERT INTO `log` VALUES ('502', 'Ingreso al sistema', '3', '2020-04-19', '17:20:51');
+INSERT INTO `log` VALUES ('503', 'Ingreso al sistema', '3', '2020-04-19', '17:21:14');
+INSERT INTO `log` VALUES ('504', 'Ingreso al sistema', '3', '2020-04-19', '17:29:03');
+INSERT INTO `log` VALUES ('505', 'Ingreso al sistema', '3', '2020-04-19', '17:34:14');
+INSERT INTO `log` VALUES ('506', 'Ingreso al sistema', '3', '2020-04-19', '17:38:30');
+INSERT INTO `log` VALUES ('507', 'Ingreso al sistema', '3', '2020-04-19', '17:39:30');
+INSERT INTO `log` VALUES ('508', 'Ingreso al sistema', '3', '2020-04-19', '17:42:05');
+INSERT INTO `log` VALUES ('509', 'Ingreso al sistema', '3', '2020-04-19', '17:42:51');
+INSERT INTO `log` VALUES ('510', 'Ingreso al sistema', '3', '2020-04-19', '17:45:46');
+INSERT INTO `log` VALUES ('511', 'Ingreso al sistema', '3', '2020-04-19', '17:47:21');
+INSERT INTO `log` VALUES ('512', 'Ingreso al sistema', '3', '2020-04-19', '17:59:19');
+INSERT INTO `log` VALUES ('513', 'Ingreso al sistema', '3', '2020-04-19', '18:02:28');
+INSERT INTO `log` VALUES ('514', 'Ingreso al sistema', '3', '2020-04-19', '18:03:39');
+INSERT INTO `log` VALUES ('515', 'Ingreso al sistema', '3', '2020-04-19', '18:04:32');
+INSERT INTO `log` VALUES ('516', 'Ingreso al sistema', '3', '2020-04-19', '18:05:24');
+INSERT INTO `log` VALUES ('517', 'Ingreso al sistema', '3', '2020-04-19', '18:06:44');
+INSERT INTO `log` VALUES ('518', 'Ingreso al sistema', '3', '2020-04-19', '18:08:12');
+INSERT INTO `log` VALUES ('519', 'Ingreso al sistema', '3', '2020-04-19', '18:13:18');
+INSERT INTO `log` VALUES ('520', 'Ingreso al sistema', '3', '2020-04-19', '18:16:55');
+INSERT INTO `log` VALUES ('521', 'Ingreso al sistema', '3', '2020-04-19', '18:17:12');
+INSERT INTO `log` VALUES ('522', 'Ingreso al sistema', '3', '2020-04-19', '18:22:05');
+INSERT INTO `log` VALUES ('523', 'Ingreso al sistema', '3', '2020-04-19', '18:24:12');
+INSERT INTO `log` VALUES ('524', 'Ingreso al sistema', '3', '2020-04-19', '18:32:35');
+INSERT INTO `log` VALUES ('525', 'Ingreso al sistema', '3', '2020-04-19', '18:40:06');
+INSERT INTO `log` VALUES ('526', 'Se ha creado un horario para la persona Judith Guadalupe Zamarripa Villanueva', '3', '2020-04-19', '18:40:21');
+INSERT INTO `log` VALUES ('527', 'Se ha actualizado el horario para la persona Judith Guadalupe Zamarripa Villanueva', '3', '2020-04-19', '18:40:57');
+INSERT INTO `log` VALUES ('528', 'Salio del sistema', '3', '2020-04-19', '18:42:16');
+INSERT INTO `log` VALUES ('529', 'Ingreso al sistema', '3', '2020-04-19', '20:11:05');
+INSERT INTO `log` VALUES ('530', 'Se ha creado un horario para la persona Silvia Guadalupe Muñiz Tienda', '3', '2020-04-19', '20:19:29');
+INSERT INTO `log` VALUES ('531', 'Se ha creado un horario para la persona Yulisa Luna Rodriguez', '3', '2020-04-19', '20:21:49');
+INSERT INTO `log` VALUES ('532', 'Se ha actualizado el horario para la persona Judith Guadalupe Zamarripa Villanueva', '3', '2020-04-19', '20:22:58');
+INSERT INTO `log` VALUES ('533', 'Se ha actualizado el horario para la persona Judith Guadalupe Zamarripa Villanueva', '3', '2020-04-19', '20:26:34');
+INSERT INTO `log` VALUES ('534', 'Se ha actualizado el horario para la persona Judith Guadalupe Zamarripa Villanueva', '3', '2020-04-19', '20:26:57');
+INSERT INTO `log` VALUES ('535', 'Se ha actualizado el horario para la persona Judith Guadalupe Zamarripa Villanueva', '3', '2020-04-19', '20:29:20');
+INSERT INTO `log` VALUES ('536', 'Se ha actualizado el horario para la persona Judith Guadalupe Zamarripa Villanueva', '3', '2020-04-19', '20:29:56');
+INSERT INTO `log` VALUES ('537', 'Se ha actualizado el horario para la persona Judith Guadalupe Zamarripa Villanueva', '3', '2020-04-19', '20:30:47');
+INSERT INTO `log` VALUES ('538', 'Se ha actualizado el horario para la persona Judith Guadalupe Zamarripa Villanueva', '3', '2020-04-19', '20:31:27');
+INSERT INTO `log` VALUES ('539', 'Ingreso al sistema', '3', '2020-04-19', '20:33:09');
+INSERT INTO `log` VALUES ('540', 'Ingreso al sistema', '3', '2020-04-19', '20:34:20');
+INSERT INTO `log` VALUES ('541', 'Ingreso al sistema', '3', '2020-04-19', '20:36:20');
+INSERT INTO `log` VALUES ('542', 'Ingreso al sistema', '3', '2020-04-19', '20:37:27');
+INSERT INTO `log` VALUES ('543', 'Se ha actualizado el horario para la persona Judith Guadalupe Zamarripa Villanueva', '3', '2020-04-19', '20:37:59');
+INSERT INTO `log` VALUES ('544', 'Se ha actualizado el horario para la persona Judith Guadalupe Zamarripa Villanueva', '3', '2020-04-19', '20:38:16');
+INSERT INTO `log` VALUES ('545', 'Ingreso al sistema', '3', '2020-04-19', '20:42:16');
+INSERT INTO `log` VALUES ('546', 'Ingreso al sistema', '3', '2020-04-19', '20:57:22');
+INSERT INTO `log` VALUES ('547', 'Ingreso al sistema', '3', '2020-04-19', '20:58:29');
+INSERT INTO `log` VALUES ('548', 'Ingreso al sistema', '3', '2020-04-19', '20:59:44');
+INSERT INTO `log` VALUES ('549', 'Ingreso al sistema', '3', '2020-04-19', '21:01:43');
+INSERT INTO `log` VALUES ('550', 'Ingreso al sistema', '3', '2020-04-19', '21:07:13');
+INSERT INTO `log` VALUES ('551', 'Ingreso al sistema', '3', '2020-04-19', '21:07:52');
+INSERT INTO `log` VALUES ('552', 'Se ha creado un horario para la persona José Manuel Rosales Bravó', '3', '2020-04-19', '21:15:34');
+INSERT INTO `log` VALUES ('553', 'Se ha actualizado el horario para la persona José Manuel Rosales Bravó', '3', '2020-04-19', '21:16:14');
 
 -- ----------------------------
 -- Table structure for temas
@@ -173,7 +737,7 @@ CREATE TABLE `temas` (
   `hora_registro` time default NULL,
   `activo` int(11) default NULL,
   PRIMARY KEY  (`id_tema`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of temas
@@ -187,7 +751,14 @@ INSERT INTO `temas` VALUES ('6', 'Warning Bootstrap', '#000', '#FFC107', '#6C757
 INSERT INTO `temas` VALUES ('7', 'Azul Britanico', '#fff', '#273c75', '#192a56', '#44bd32', '2020-03-28', '08:20:37', '1');
 INSERT INTO `temas` VALUES ('8', 'German Team', '#fff', '#f7b731', '#2C3A47', '#ff4757', '2020-03-30', '17:57:15', '1');
 INSERT INTO `temas` VALUES ('9', 'CHyP', '$fff', '#ff9ff3', '#f368e0', '#222f3e', '2020-03-31', '13:15:51', '1');
-INSERT INTO `temas` VALUES ('10', 'Night', '#fff', '#2d3436', '#34495e', '#95a5a6', '2020-03-31', '17:37:30', '1');
+INSERT INTO `temas` VALUES ('10', 'Chopes', '#d2dae2', '#4b4b4b', '#3d3d3d', '#ff3838', '2020-04-02', '00:50:33', '1');
+INSERT INTO `temas` VALUES ('11', 'Adolfo', '#E3E2DE', '#9B1750', '#5D001D', '#9B1750', '2020-04-03', '17:14:10', '1');
+INSERT INTO `temas` VALUES ('12', 'Cool', '#ffeaa7', '#6D214F', '#5758BB', '#2f3542', '2020-03-31', '16:50:31', '1');
+INSERT INTO `temas` VALUES ('13', 'Dark Green', '#F2F2F2', '#19261B', '#2B402C', '#070D0A', '2020-03-01', '17:54:55', '1');
+INSERT INTO `temas` VALUES ('14', 'Grey and Blue', '#fff', '#224277', '#3C4C59', '#65768C', '2020-03-31', '18:23:09', '1');
+INSERT INTO `temas` VALUES ('15', 'Oscuro', '#ffffff', '#050505', '#050505', '#40F70E', '2021-06-16', '17:45:52', '1');
+INSERT INTO `temas` VALUES ('16', 'Snarky', '#fff', '#576574', '#739fd1', '#95a5a6', '2020-03-31', '16:48:40', '1');
+INSERT INTO `temas` VALUES ('17', 'Night', '#fff', '#2d3436', '#34495e', '#95a5a6', '2020-03-31', '17:37:30', '1');
 
 -- ----------------------------
 -- Table structure for usuarios
@@ -212,6 +783,6 @@ CREATE TABLE `usuarios` (
 -- ----------------------------
 -- Records of usuarios
 -- ----------------------------
-INSERT INTO `usuarios` VALUES ('1', '1', '7', 'doe', 'doe', 'si', 'si', 'si', 'si', '2021-03-26', '2020-03-27', '1');
+INSERT INTO `usuarios` VALUES ('1', '1', '7', 'doe', '12345678', 'si', 'si', 'si', 'si', '2021-03-26', '2020-04-12', '1');
 INSERT INTO `usuarios` VALUES ('2', '44', '2', 'paperez', '12345', 'no', 'no', 'no', 'no', '2021-03-29', '2020-03-29', '1');
-INSERT INTO `usuarios` VALUES ('3', '48', '10', 'maiin', '12345', 'si', 'si', 'si', 'si', '2021-03-29', '2020-03-31', '1');
+INSERT INTO `usuarios` VALUES ('3', '48', '10', 'maiin', '123', 'si', 'si', 'si', 'si', '2021-03-29', '2020-04-12', '1');
