@@ -126,6 +126,21 @@ $fecha=date("Y-m-d");
                 <section id="Listado-EC" class="animated  fadeIn contenedor" style="display:none;"></section>
             </div>
 
+            <div class="container-fluid" id="Temas">
+                <section id="guardar-T" style="display:none;">
+                    <?php
+                        include'../mTemas/formGuardar.php';
+                    ?>
+                </section>
+
+                <section id="editar-T" style="display:none;">
+                    <?php
+                        include'../mTemas/formEditar.php';
+                    ?>
+                </section>
+                
+                <section id="Listado-T" class="animated  fadeIn contenedor" style="display:none;"></section>
+            </div> 
         </div>
 
     </div>
@@ -148,9 +163,12 @@ $fecha=date("Y-m-d");
         <?php include'../modales/modalPDF.php'; ?>
     <!-- Modal de PDF -->
     <?php include'../modales/modalHorario.php'; ?>
+    <!-- Modal de ImpTemas -->
+    <?php include'../modales/modalImporTema.php'; ?>
 
     <!-- jQuery -->
     <script src="../plugins/jQuery/jquery-3.3.1.js"></script>   
+    <script src="../plugins/jQuery-Timer/jquery.timer.js"></script>
     <!-- Bootstrap-4 -->
     <script src="../plugins/bootstrap-4.0.0/dist/js/bootstrap.js"></script> 
     <!-- Alertifyjs -->  
@@ -160,6 +178,7 @@ $fecha=date("Y-m-d");
     <script src="../mLogin/funcionesL.js"></script> <!-- Login -->
     <script src="../mDatosPersonales/funcionesDP.js"></script> <!-- Datos Personales --> 
     <script src="../mEstadoCivil/funcionesEC.js"></script> <!-- Estado Civil -->
+    <script src="../mTemas/funcionesT.js"></script> <!-- Temas -->
     <!-- DataTables -->
     <script src="../plugins/dataTablesB4/js/jquery.dataTables.min.js"></script>
     <script src="../plugins/dataTablesB4/js/dataTables.bootstrap4.min.js"></script>

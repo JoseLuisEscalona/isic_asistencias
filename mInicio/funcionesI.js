@@ -16,6 +16,11 @@ function ocultarSecciones(){
     $("#guardar-EC").hide();
     $("#editar-EC").hide();
     $("#Listado-EC").hide();
+    //TEMAS
+    $("#Temas").hide();
+    $("#guardar-T").hide();
+    $("#editar-T").hide();
+    $("#Listado-T").hide();
     //USUARIOS
 }
 
@@ -62,6 +67,21 @@ function verEstadoCivil(){
     llenar_lista_EC();
     var idTema=$("#inicioIdTema").val()
     aplicarTema(idTema,'otro');      
+}
+
+function verTemas(){
+    ocultarSecciones();
+    $("#lblTitular").text("Temas");
+    $("#editar-T").hide();
+    $("#guardar-T").hide();
+    $("#Listado-T").fadeIn();
+    $("#frmGuardar-T")[0].reset();
+    $("#frmActualizar-T")[0].reset();
+    $("#badgeInfo").text("Lista");
+    $("#Temas").show();
+    llenar_lista_T();
+    var idTema=$("#inicioIdTema").val()
+    aplicarTema(idTema,'otro');
 }
 
 function verCambioPass(){
