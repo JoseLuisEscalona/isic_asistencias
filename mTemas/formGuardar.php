@@ -43,7 +43,7 @@ $varGral="-T";
                     </button>
                 </div>
                 <div class="col text-center">
-                    <button  type="button" class="btn btn-outline-success  activo btnEspacio" onclick="Probartema()" id="btnProbar<?php echo $varGral?>">
+                    <button  type="button" class="btn btn-outline-success  activo btnEspacio" onclick="Probartema(), audio()" id="btnProbar<?php echo $varGral?>">
                         <i class='fa fa-save fa-lg'></i>
                         Probar Tema
                     </button>

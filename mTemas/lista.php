@@ -79,12 +79,12 @@ $consultar = mysqli_query($conexionLi, $cadena);
                                 <i class="far fa-edit fa-lg"></i>
                     </button>
                 <td>
-                    <button <?php echo $dtnDesabilita?> type="button" class="imprimir btn btn-outline-warning btn-sm activo" id="btnExportar<?php echo $varGral?><?php echo $n?>" onclick="abrirModalPDF('<?php echo $id?>','../mDatosPersonales','Datos Personales')">
+                    <button <?php echo $dtnDesabilita?> type="button" class="imprimir btn btn-outline-warning btn-sm activo" id="btnExportar<?php echo $varGral?><?php echo $n?>" onclick="exportar('<?php echo $id?>')">
                                 <i class="fas fa-file-export"></i>
                     </button>
                 </td>
                 <td>
-                    <button <?php echo $dtnDesabilita?> type="button" class="ventana btn btn-outline-info btn-sm activo"  id="btnAplicar<?php echo $varGral?><?php echo $n?>" onclick="abrirModalDatos_DP('<?php echo $id?>','<?php echo $nombre?>','<?php echo $paterno?>','<?php echo $materno?>','<?php echo $fNac?>','<?php echo $edad?>','<?php echo $correo?>','<?php echo $curp?>','<?php echo $clave?>','<?php echo $domicilio?>','<?php echo $sexo?>','<?php echo $ecivil?>')">
+                    <button <?php echo $dtnDesabilita?> type="button" class="ventana btn btn-outline-info btn-sm activo"  id="btnAplicar<?php echo $varGral?><?php echo $n?>" onclick="Aplicartema(<?php echo $id?>)">
                                 <i class="fas fa-check-square"></i>
                     </button>
                 </td>
