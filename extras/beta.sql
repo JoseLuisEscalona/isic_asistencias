@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50051
 File Encoding         : 65001
 
-Date: 2020-04-27 14:19:29
+Date: 2020-05-22 18:18:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -163,7 +163,7 @@ CREATE TABLE `log` (
   `fecha_registro` date default NULL,
   `hora_registro` time default NULL,
   PRIMARY KEY  (`id_log`)
-) ENGINE=MyISAM AUTO_INCREMENT=571 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=606 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of log
@@ -738,6 +738,41 @@ INSERT INTO `log` VALUES ('567', 'Ingreso al sistema', '3', '2020-04-24', '18:04
 INSERT INTO `log` VALUES ('568', 'Ingreso al sistema', '3', '2020-04-24', '18:17:43');
 INSERT INTO `log` VALUES ('569', 'Se ha desactivado un registro de la tabla tabla Temas', '3', '2020-04-24', '18:22:56');
 INSERT INTO `log` VALUES ('570', 'Se ha reactivado un registro de la tabla tabla Temas', '3', '2020-04-24', '18:23:08');
+INSERT INTO `log` VALUES ('571', 'Ingreso al sistema', '3', '2020-04-27', '14:20:55');
+INSERT INTO `log` VALUES ('572', 'Ingreso al sistema', '3', '2020-05-07', '21:06:42');
+INSERT INTO `log` VALUES ('573', 'Se insertado un nuevo registro a la tabla Temas', '3', '2020-05-07', '21:37:52');
+INSERT INTO `log` VALUES ('574', 'Se ha modificado un registro de la tabla tabla Temas', '3', '2020-05-07', '21:38:31');
+INSERT INTO `log` VALUES ('575', 'Ha cambiado al tema Prueba', '3', '2020-05-07', '21:39:01');
+INSERT INTO `log` VALUES ('576', 'Se ha desactivado un registro de la tabla tabla Temas', '3', '2020-05-07', '21:39:05');
+INSERT INTO `log` VALUES ('577', 'Se ha reactivado un registro de la tabla tabla Temas', '3', '2020-05-07', '21:39:12');
+INSERT INTO `log` VALUES ('578', 'Ha cambiado al tema Grey and Blue', '3', '2020-05-07', '21:39:48');
+INSERT INTO `log` VALUES ('579', 'Ingreso al sistema', '3', '2020-05-08', '16:13:23');
+INSERT INTO `log` VALUES ('580', 'Ingreso al sistema', '3', '2020-05-08', '16:16:00');
+INSERT INTO `log` VALUES ('581', 'Ingreso al sistema', '3', '2020-05-08', '16:26:21');
+INSERT INTO `log` VALUES ('582', 'Ingreso al sistema', '3', '2020-05-08', '16:31:14');
+INSERT INTO `log` VALUES ('583', 'Ingreso al sistema', '3', '2020-05-08', '16:32:12');
+INSERT INTO `log` VALUES ('584', 'Ingreso al sistema', '3', '2020-05-08', '16:33:46');
+INSERT INTO `log` VALUES ('585', 'Ingreso al sistema', '3', '2020-05-08', '16:36:44');
+INSERT INTO `log` VALUES ('586', 'Ingreso al sistema', '3', '2020-05-08', '16:39:09');
+INSERT INTO `log` VALUES ('587', 'Ingreso al sistema', '3', '2020-05-08', '16:45:02');
+INSERT INTO `log` VALUES ('588', 'Ingreso al sistema', '3', '2020-05-08', '16:46:00');
+INSERT INTO `log` VALUES ('589', 'Ingreso al sistema', '3', '2020-05-08', '16:46:38');
+INSERT INTO `log` VALUES ('590', 'Ingreso al sistema', '3', '2020-05-08', '16:47:18');
+INSERT INTO `log` VALUES ('591', 'Ingreso al sistema', '3', '2020-05-09', '18:41:31');
+INSERT INTO `log` VALUES ('592', 'Ingreso al sistema', '3', '2020-05-09', '18:45:43');
+INSERT INTO `log` VALUES ('593', 'Ha cambiado al tema Oscuro', '3', '2020-05-09', '22:36:11');
+INSERT INTO `log` VALUES ('594', 'Ingreso al sistema', '3', '2020-05-22', '17:02:49');
+INSERT INTO `log` VALUES ('595', 'Ha cambiado al tema Chopes', '3', '2020-05-22', '17:21:16');
+INSERT INTO `log` VALUES ('596', 'Ha cambiado al tema Azul Britanico', '3', '2020-05-22', '17:21:33');
+INSERT INTO `log` VALUES ('597', 'Ha cambiado al tema Chopes', '3', '2020-05-22', '17:21:36');
+INSERT INTO `log` VALUES ('598', 'Ingreso al sistema', '3', '2020-05-22', '17:23:24');
+INSERT INTO `log` VALUES ('599', 'Se insertado un nuevo registro a la tabla Usuarios', '3', '2020-05-22', '17:26:51');
+INSERT INTO `log` VALUES ('600', 'Se ha modificado un registro de la tabla tabla Usuarios', '3', '2020-05-22', '17:27:39');
+INSERT INTO `log` VALUES ('601', 'Se han guardado permisos para el usuario cano1', '3', '2020-05-22', '17:28:03');
+INSERT INTO `log` VALUES ('602', 'Se ha restablecido la contraseña para el usuariomaiin', '3', '2020-05-22', '17:28:20');
+INSERT INTO `log` VALUES ('603', 'Se ha desactivado un registro de la tabla tabla Usuarios', '3', '2020-05-22', '17:28:30');
+INSERT INTO `log` VALUES ('604', 'Se ha reactivado un registro de la tabla tabla Usuarios', '3', '2020-05-22', '17:28:37');
+INSERT INTO `log` VALUES ('605', 'Ingreso al sistema', '3', '2020-05-22', '18:16:25');
 
 -- ----------------------------
 -- Table structure for temas
@@ -754,7 +789,7 @@ CREATE TABLE `temas` (
   `hora_registro` time default NULL,
   `activo` int(11) default NULL,
   PRIMARY KEY  (`id_tema`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of temas
@@ -775,7 +810,8 @@ INSERT INTO `temas` VALUES ('13', 'Dark Green', '#F2F2F2', '#19261B', '#2B402C',
 INSERT INTO `temas` VALUES ('14', 'Grey and Blue', '#fff', '#224277', '#3C4C59', '#65768C', '2020-03-31', '18:23:09', '1');
 INSERT INTO `temas` VALUES ('15', 'Oscuro', '#ffffff', '#050505', '#050505', '#40F70E', '2020-03-16', '17:45:52', '1');
 INSERT INTO `temas` VALUES ('16', 'Snarky', '#fff', '#576574', '#739fd1', '#95a5a6', '2020-03-31', '16:48:40', '1');
-INSERT INTO `temas` VALUES ('17', 'Night', '#fff', '#2d3436', '#34495e', '#95a5a6', '2020-04-24', '18:23:08', '1');
+INSERT INTO `temas` VALUES ('18', 'Night', '#fff', '#2d3436', '#34495e', '#95a5a6', '2020-03-31', '17:37:30', '1');
+INSERT INTO `temas` VALUES ('19', 'Prueba', '#0000ff', '#800000', '#ffffff', '#000000', '2020-05-07', '21:39:12', '1');
 
 -- ----------------------------
 -- Table structure for usuarios
@@ -795,11 +831,12 @@ CREATE TABLE `usuarios` (
   `fecha_registro` date default NULL,
   `activo` int(11) default NULL,
   PRIMARY KEY  (`id_usuario`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of usuarios
 -- ----------------------------
-INSERT INTO `usuarios` VALUES ('1', '1', '7', 'doe', '12345678', 'si', 'si', 'si', 'si', '2021-03-26', '2020-04-12', '1');
+INSERT INTO `usuarios` VALUES ('1', '1', '7', 'doe', '12345678', 'si', 'si', 'si', 'si', '2021-03-26', '2020-05-22', '1');
 INSERT INTO `usuarios` VALUES ('2', '44', '2', 'paperez', '12345', 'no', 'no', 'no', 'no', '2021-03-29', '2020-03-29', '1');
-INSERT INTO `usuarios` VALUES ('3', '48', '10', 'maiin', '123', 'si', 'si', 'si', 'si', '2021-03-29', '2020-04-12', '1');
+INSERT INTO `usuarios` VALUES ('3', '48', '10', 'maiin', '12345678', 'si', 'si', 'si', 'si', '2021-03-29', '2020-04-12', '1');
+INSERT INTO `usuarios` VALUES ('4', '2', '3', 'cano1', '12345678', 'si', 'si', 'si', 'si', '2020-05-26', '2020-05-22', '1');

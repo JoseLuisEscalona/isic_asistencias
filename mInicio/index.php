@@ -141,6 +141,22 @@ $fecha=date("Y-m-d");
                 
                 <section id="Listado-T" class="animated  fadeIn contenedor" style="display:none;"></section>
             </div> 
+
+            <div class="container-fluid" id="Usuarios">
+                <section id="guardar-U" style="display:none;">
+                    <?php
+                        include'../mUsuarios/formGuardar.php';
+                    ?>
+                </section>
+
+                <section id="editar-U" style="display:none;">
+                    <?php
+                        include'../mUsuarios/formEditar.php';
+                    ?>
+                </section>
+                
+                <section id="Listado-U" class="animated  fadeIn contenedor" style="display:none;"></section>
+            </div> 
         </div>
 
     </div>
@@ -165,6 +181,9 @@ $fecha=date("Y-m-d");
     <?php include'../modales/modalHorario.php'; ?>
     <!-- Modal de ImpTemas -->
     <?php include'../modales/modalImporTema.php'; ?>
+    <!-- Modal de Permisos -->
+    <?php include'../modales/modalPermisos.php'; ?>
+    <!-- Modal de Permisos -->
 
     <!-- jQuery -->
     <script src="../plugins/jQuery/jquery-3.3.1.js"></script>   
@@ -179,6 +198,7 @@ $fecha=date("Y-m-d");
     <script src="../mDatosPersonales/funcionesDP.js"></script> <!-- Datos Personales --> 
     <script src="../mEstadoCivil/funcionesEC.js"></script> <!-- Estado Civil -->
     <script src="../mTemas/funcionesT.js"></script> <!-- Temas -->
+    <script src="../mUsuarios/funcionesU.js"></script> <!-- Usuarios -->
     <!-- DataTables -->
     <script src="../plugins/dataTablesB4/js/jquery.dataTables.min.js"></script>
     <script src="../plugins/dataTablesB4/js/dataTables.bootstrap4.min.js"></script>
@@ -214,6 +234,9 @@ $fecha=date("Y-m-d");
     <script src="../plugins/bootstrap-sweetalert-master/dist/sweetalert.js" type="text/javascript"></script>
     <script>
         combo_ecivil();
+        combo_tema();
+        combo_nombre();
+        combo_Enombre();
         selectTwo();
     </script>
 
