@@ -246,7 +246,7 @@ function abrirModalImpTema(){
 function importarArchivoTema(){
     var files = $('#image1')[0].files[0];
     var archivo=files.name;
-    var ruta= "../mTemas/Temas/"+archivo;
+    var ruta= "../Temas/"+archivo;
 
     console.log(ruta);
     
@@ -378,6 +378,15 @@ function ProbartemaE(id){
         $("#btnActualizar-T").attr('disabled','disabled');
     }
     }) 
+}
+
+function TemOver(cLetra,cBase,cBasefue,cBorde){
+    cssTema(cBasefue,cBase,cLetra,cBorde);
+}
+
+function TemOut(){
+    var idUs = $("#inicioIdTema").val();
+    aplicarTema(idUs,'login');
 }
 
 function exportar(id){

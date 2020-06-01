@@ -34,7 +34,7 @@ $actualizar = mysqli_query($conexionLi, $cadena);
 		$clave = $row[4];
 		$descripcion = $row[5];
 		$edad = CalculaEdad($fecha_nac);
-		$respuesta = "Su nombre es: ".$nombre.", con la edad de: ".$edad.", el correo vinculado es: ".$correo.", su curp es: ".$curp." y su estado civil es: ".$descripcion.". Gracias por su asistencia";
+		$respuesta = "Su nombre es: <b><u><i>".$nombre."</i></u></b>, con la edad de: <b><u><i>".$edad."</i></u></b>, el correo vinculado es: <b><u><i>".$correo."</i></u></b>, su curp es: <b><u><i>".$curp."</i></u></b> y su estado civil es: <b><u><i>".$descripcion."</i></u></b>.";
 		}  
 		echo $respuesta;
 

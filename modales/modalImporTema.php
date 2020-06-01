@@ -13,8 +13,8 @@
             
                 <input id="image1" type="file"  class="file"  data-theme="fas">
             
-                <input type="hidden" class="form-control-file" name="clavePersona" id="clavePersona" >
-                <input type="hidden" class="form-control-file" name="tamanoKB" id="tamanoKB" value="3000">
+                <input type="hidden" class="form-control-file" name="clavePersona1" id="clavePersona1" >
+                <input type="hidden" class="form-control-file" name="tamanoKB1" id="tamanoKB1" value="3000">
                 <div class="col text-center">
                 <button type="button" onclick="importarArchivoTema();" class="btn btn-outline-dark" style="margin-top:8px;">
                     <i class="fas fa-download"></i> Importar Tema
@@ -32,7 +32,7 @@
     </div>
 
     <script>
-        $("#image").fileinput({
+        $("#image1").fileinput({
             'theme': 'explorer-fas',
             overwriteInitial: false,
             initialPreviewAsData: true,

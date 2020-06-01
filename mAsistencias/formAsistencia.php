@@ -26,12 +26,12 @@ $varGral="-AS";
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="form-group cent">
-                <label for="" id="Inci">Incidencia</label>
+                <label for="" id="Inci"></label>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="form-group cent">
-                <label for="" id="Datos">Datos del trabajador</label>
+                <label for="" id="Datos"></label>
             </div>
         </div>
     </div>

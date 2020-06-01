@@ -84,7 +84,7 @@ $consultar = mysqli_query($conexionLi, $cadena);
                     </button>
                 </td>
                 <td>
-                    <button <?php echo $dtnDesabilita?> type="button" class="ventana btn btn-outline-info btn-sm activo"  id="btnAplicar<?php echo $varGral?><?php echo $n?>" onclick="Aplicartema(<?php echo $id?>)">
+                    <button <?php echo $dtnDesabilita?> type="button" class="ventana btn btn-outline-info btn-sm activo"  id="btnAplicar<?php echo $varGral?><?php echo $n?>" onclick="Aplicartema(<?php echo $id?>)" onmouseleave="TemOut()" onmouseenter="TemOver('<?php echo $cLetra?>','<?php echo $cBase?>','<?php echo $cBasefue?>','<?php echo $cBorde?>')" >
                                 <i class="fas fa-check-square"></i>
                     </button>
                 </td>

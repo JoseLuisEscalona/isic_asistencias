@@ -201,7 +201,7 @@ function rChAsistencia(res, now){
 }
 
 function Salida(res, incidencia, colorfin){
-
+    var clave = $("#Aclave").val();
         $.ajax({
             url:"../mAsistencias/actualizar.php",
             type:"POST",
@@ -211,7 +211,7 @@ function Salida(res, incidencia, colorfin){
                 Sonido("Gracias por registrar su salida");
                 alertify.success("Gracias por registrar su salida");
                 personadato(res, mensajefin, colorfin);
-                actividad  ="Se ha registrado una salida para la clave "+res;
+                actividad  ="Se ha registrado una salida para la clave "+clave;
                 var idUser=$("#inicioIdusuario").val();
                 log(actividad,idUser);
             },
@@ -225,7 +225,7 @@ function Salida(res, incidencia, colorfin){
 
 
 function Entrada(res, incidencia, colorfin){
-
+    var clave = $("#Aclave").val();
         $.ajax({
             url:"../mAsistencias/guardar.php",
             type:"POST",
@@ -235,7 +235,7 @@ function Entrada(res, incidencia, colorfin){
                 Sonido("Gracias por registrar su entrada");
                 alertify.success("Gracias por registrar su entrada");
                 personadato(res, mensajefin, colorfin);
-                actividad  ="Se ha registrado una entrada para la clave "+res;
+                actividad  ="Se ha registrado una entrada para la clave "+clave;
                 var idUser=$("#inicioIdusuario").val();
                 log(actividad,idUser);
             },
