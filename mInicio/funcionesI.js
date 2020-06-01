@@ -30,13 +30,16 @@ function ocultarSecciones(){
 
 function verAsistencias(){
     ocultarSecciones();
-    preloader(1,'Asitencia del personal');
+    preloader(1,'Asitencia del personal', function(){
+        $("#Aclave").focus();
+    });
     $("#datosPersona").hide();
     $("#asistencia-AS").fadeIn();
     $("#lblTitular").text("Control de Asistencias");
     $("#badgeInfo").text("Dezliza tú tarjeta");
     var idTema=$("#inicioIdTema").val()
     aplicarTema(idTema,'otro');
+    bienvenida();
 }
 
 function verDatosPersonales(){
@@ -202,12 +205,13 @@ function relacionarTema(idTema){
     });
 }
 
-function preloader(seg,mensaje){
+function preloader(seg, mensaje, callback){
     var s=parseInt(seg)*1000;
     abrirModalCarga(mensaje);
     setTimeout(function() {
 
         cerrarModalCarga();
+        if(callback) callback();
     },s);
 }
 

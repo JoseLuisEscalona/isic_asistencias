@@ -161,29 +161,30 @@ $fecha=date("Y-m-d");
 
     </div>
 
-    <!-- Modal de cambiopass dentro del sistema -->
-        <?php include'../modales/modalCambioSistem.php'; ?>
-    <!-- Modal de cambiopass -->
-        <?php include'../modales/modalCambio.php'; ?>
-    <!-- Modal de cambiopass -->
-    <!-- Modal de carga -->
-        <?php include'../modales/modalCarga.php'; ?>
-    <!-- Modal de carga -->  
-    <!-- Modal de datos -->
-        <?php include'../mDatosPersonales/modalDatos.php'; ?>
-    <!-- Modal de datos -->
-    <!-- Modal de Foto -->
-        <?php include'../modales/modalFoto.php'; ?>
-    <!-- Modal de Foto -->
-    <!-- Modal de PDF -->
-        <?php include'../modales/modalPDF.php'; ?>
-    <!-- Modal de PDF -->
-    <?php include'../modales/modalHorario.php'; ?>
     <!-- Modal de ImpTemas -->
     <?php include'../modales/modalImporTema.php'; ?>
+    <!-- Modal de cambiopass dentro del sistema -->
+    <?php include'../modales/modalCambioSistem.php'; ?>
+    <!-- Modal de cambiopass -->
+    <?php include'../modales/modalCambio.php'; ?>
+    <!-- Modal de cambiopass -->
+    <!-- Modal de carga -->
+    <?php include'../modales/modalCarga.php'; ?>
+    <!-- Modal de carga -->  
+    <!-- Modal de datos -->
+    <?php include'../mDatosPersonales/modalDatos.php'; ?>
+    <!-- Modal de datos -->
+    <!-- Modal de Foto -->
+    <?php include'../modales/modalFoto.php'; ?>
+    <!-- Modal de Foto -->
+    <!-- Modal de PDF -->
+    <?php include'../modales/modalPDF.php'; ?>
+    <!-- Modal de PDF -->
+    <?php include'../modales/modalHorario.php'; ?>
     <!-- Modal de Permisos -->
     <?php include'../modales/modalPermisos.php'; ?>
     <!-- Modal de Permisos -->
+    
 
     <!-- jQuery -->
     <script src="../plugins/jQuery/jquery-3.3.1.js"></script>   
@@ -199,6 +200,7 @@ $fecha=date("Y-m-d");
     <script src="../mEstadoCivil/funcionesEC.js"></script> <!-- Estado Civil -->
     <script src="../mTemas/funcionesT.js"></script> <!-- Temas -->
     <script src="../mUsuarios/funcionesU.js"></script> <!-- Usuarios -->
+    <script src="../mAsistencias/funcionesA.js"></script> <!-- Usuarios -->
     <!-- DataTables -->
     <script src="../plugins/dataTablesB4/js/jquery.dataTables.min.js"></script>
     <script src="../plugins/dataTablesB4/js/dataTables.bootstrap4.min.js"></script>
@@ -238,6 +240,7 @@ $fecha=date("Y-m-d");
         combo_nombre();
         combo_Enombre();
         selectTwo();
+        reloj();
     </script>
 
     <script>

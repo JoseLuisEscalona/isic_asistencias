@@ -410,7 +410,53 @@ a.article:hover {
 .verde{
     color: green;
 }
+.naranja{
+    color: orangered;
+}
+.azul{
+    color: blue;
+}
+.rojo2{
+    color: red;
+}
+.verde2{
+    color: green;
+}
+.pers{
+    color: white;
+    background-color: black;
+}
 .tamañomodal {
     max-width: 65% !important;
 }
 
+#Time{
+    font-family: "Reloj digital";
+    font-size:80px;
+    text-shadow:0px 0px 1px #fff;
+}
+
+.Reloj {
+    padding:10px;
+    max-width:500px;
+    width:100%;
+    text-align:center;
+    border-radius:5px;
+    margin:0 auto;
+}
+
+#Aclave{
+    font-size: 2.5em;
+    text-align: center;
+    align-content: center;
+}
+
+@font-face{
+    font-family: "Reloj digital";
+    src: url("../expImpTemas/fonts/DJB Get Digital.ttf");
+}
+
+.cent{
+    text-align: center;
+    font-size: 1.5em;
+}
